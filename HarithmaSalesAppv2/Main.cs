@@ -40,5 +40,11 @@ namespace HarithmaSalesAppv2
             DiscountForm f4 = new DiscountForm();
             f4.Show();
         }
+
+        private void btnInvoice_Click(object sender, EventArgs e)
+        {
+            InvoiceForm f5 = new InvoiceForm();
+            f5.Show();
+        }
     }
 }

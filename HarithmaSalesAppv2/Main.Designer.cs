@@ -34,6 +34,7 @@ namespace HarithmaSalesAppv2
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnDiscount = new System.Windows.Forms.Button();
+            this.btnInvoice = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnItem
@@ -76,11 +77,22 @@ namespace HarithmaSalesAppv2
             this.btnDiscount.UseVisualStyleBackColor = true;
             this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
+            // btnInvoice
+            // 
+            this.btnInvoice.Location = new System.Drawing.Point(12, 195);
+            this.btnInvoice.Name = "btnInvoice";
+            this.btnInvoice.Size = new System.Drawing.Size(75, 55);
+            this.btnInvoice.TabIndex = 4;
+            this.btnInvoice.Text = "Invoice";
+            this.btnInvoice.UseVisualStyleBackColor = true;
+            this.btnInvoice.Click += new System.EventHandler(this.btnInvoice_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnDiscount);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnInventory);
@@ -97,6 +109,7 @@ namespace HarithmaSalesAppv2
         private System.Windows.Forms.Button btnInventory;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnDiscount;
+        private System.Windows.Forms.Button btnInvoice;
     }
 }
 
