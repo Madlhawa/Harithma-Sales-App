@@ -24,7 +24,7 @@ namespace HarithmaSalesAppv2
         public System.DateTime InvoiceDate { get; set; }
         public Nullable<decimal> InvoiceDiscount { get; set; }
         public decimal InvoiceAmount { get; set; }
-        public decimal InvoiceAmountRecieved { get; set; }
+        public Nullable<decimal> InvoiceAmountRecieved { get; set; }
         public Nullable<decimal> InvoiceBalance { get; set; }
         public string InvoicePaymentMethod { get; set; }
         public string InvoiceRemarks { get; set; }

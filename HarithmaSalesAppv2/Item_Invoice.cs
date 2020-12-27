@@ -18,7 +18,7 @@ namespace HarithmaSalesAppv2
         public int ItemID { get; set; }
         public int InvoiceID { get; set; }
         public int Quantity { get; set; }
-        public decimal Amount { get; set; }
+        public Nullable<decimal> Amount { get; set; }
     
         public virtual Invoice Invoice { get; set; }
         public virtual Item Item { get; set; }

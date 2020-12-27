@@ -4,18 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HarithmaSalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HarithmaSalesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Discount">
           <Key>
             <PropertyRef Name="DiscountID" />
           </Key>
           <Property Name="DiscountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ItemID" Type="int" />
-          <Property Name="DiscountValue" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="DiscountValue" Type="decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="DiscountStartDate" Type="datetime" />
-          <Property Name="DiscountEndDate" Type="datetime" />
+          <Property Name="DiscountEndDate" Type="datetime" Nullable="false" />
           <Property Name="DiscountDuration" Type="int" />
-          <Property Name="DiscountStatus" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="DiscountStatus" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Inventory">
           <Key>
@@ -37,7 +37,7 @@
           <Property Name="InvoiceDate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
           <Property Name="InvoiceDiscount" Type="decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceAmount" Type="decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="InvoiceAmountRecieved" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="InvoiceAmountRecieved" Type="decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceBalance" Type="decimal" Precision="19" Scale="4" />
           <Property Name="InvoicePaymentMethod" Type="nvarchar" MaxLength="50" />
           <Property Name="InvoiceRemarks" Type="nvarchar" MaxLength="100" />
@@ -52,7 +52,7 @@
           <Property Name="ItemStockPrice" Type="decimal" Precision="19" Scale="4" />
           <Property Name="ItemSellingPrice" Type="decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="ItemAvailableQuantity" Type="int" Nullable="false" />
-          <Property Name="ItemDiscount" Type="float" />
+          <Property Name="ItemDiscount" Type="decimal" Precision="19" Scale="4" />
           <Property Name="ItemDate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
         </EntityType>
         <EntityType Name="Item_Invoice">
@@ -63,7 +63,7 @@
           <Property Name="ItemID" Type="int" Nullable="false" />
           <Property Name="InvoiceID" Type="int" Nullable="false" />
           <Property Name="Quantity" Type="int" Nullable="false" />
-          <Property Name="Amount" Type="decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="19" Scale="4" />
         </EntityType>
         <Association Name="Invoice_ItemInvoice">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="1" />
@@ -136,8 +136,7 @@
             <End Role="Item_Invoice" EntitySet="Item_Invoice" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HarithmaSalesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -147,11 +146,11 @@
           </Key>
           <Property Name="DiscountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ItemID" Type="Int32" />
-          <Property Name="DiscountValue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DiscountValue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="DiscountStartDate" Type="DateTime" Precision="3" />
-          <Property Name="DiscountEndDate" Type="DateTime" Precision="3" />
+          <Property Name="DiscountEndDate" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="DiscountDuration" Type="Int32" />
-          <Property Name="DiscountStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DiscountStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="Item" Relationship="Self.Item_Discount" FromRole="Discount" ToRole="Item" />
         </EntityType>
         <EntityType Name="Inventory">
@@ -175,7 +174,7 @@
           <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="InvoiceDiscount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceAmount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="InvoiceAmountRecieved" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="InvoiceAmountRecieved" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceBalance" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="InvoicePaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="InvoiceRemarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -191,7 +190,7 @@
           <Property Name="ItemStockPrice" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ItemSellingPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="ItemAvailableQuantity" Type="Int32" Nullable="false" />
-          <Property Name="ItemDiscount" Type="Double" />
+          <Property Name="ItemDiscount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="ItemDate" Type="DateTime" Nullable="false" Precision="3" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="Discounts" Relationship="Self.Item_Discount" FromRole="Item" ToRole="Discount" />
           <NavigationProperty Name="Inventories" Relationship="Self.Item_Inventory" FromRole="Item" ToRole="Inventory" />
@@ -205,7 +204,7 @@
           <Property Name="ItemID" Type="Int32" Nullable="false" />
           <Property Name="InvoiceID" Type="Int32" Nullable="false" />
           <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="Invoice" Relationship="Self.Invoice_ItemInvoice" FromRole="Item_Invoice" ToRole="Invoice" />
           <NavigationProperty Name="Item" Relationship="Self.Item_ItemInvoice" FromRole="Item_Invoice" ToRole="Item" />
         </EntityType>

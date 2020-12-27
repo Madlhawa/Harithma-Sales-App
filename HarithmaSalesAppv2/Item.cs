@@ -28,7 +28,7 @@ namespace HarithmaSalesAppv2
         public Nullable<decimal> ItemStockPrice { get; set; }
         public decimal ItemSellingPrice { get; set; }
         public int ItemAvailableQuantity { get; set; }
-        public Nullable<double> ItemDiscount { get; set; }
+        public Nullable<decimal> ItemDiscount { get; set; }
         public System.DateTime ItemDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

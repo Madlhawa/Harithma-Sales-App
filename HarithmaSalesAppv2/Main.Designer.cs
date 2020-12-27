@@ -29,8 +29,11 @@ namespace HarithmaSalesAppv2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btnItem = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnDiscount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnItem
@@ -53,11 +56,33 @@ namespace HarithmaSalesAppv2
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.Location = new System.Drawing.Point(12, 383);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(75, 55);
+            this.btnSettings.TabIndex = 2;
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnDiscount
+            // 
+            this.btnDiscount.Location = new System.Drawing.Point(12, 134);
+            this.btnDiscount.Name = "btnDiscount";
+            this.btnDiscount.Size = new System.Drawing.Size(75, 55);
+            this.btnDiscount.TabIndex = 3;
+            this.btnDiscount.Text = "Discount";
+            this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnDiscount);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnItem);
             this.Name = "Main";
@@ -70,6 +95,8 @@ namespace HarithmaSalesAppv2
 
         private System.Windows.Forms.Button btnItem;
         private System.Windows.Forms.Button btnInventory;
+        private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnDiscount;
     }
 }
 

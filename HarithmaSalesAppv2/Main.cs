@@ -28,5 +28,17 @@ namespace HarithmaSalesAppv2
             InventoryForm f2 = new InventoryForm();
             f2.Show();
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            SettingsForm f3 = new SettingsForm();
+            f3.Show();
+        }
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+            DiscountForm f4 = new DiscountForm();
+            f4.Show();
+        }
     }
 }

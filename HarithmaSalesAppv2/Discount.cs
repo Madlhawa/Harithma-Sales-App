@@ -16,9 +16,9 @@ namespace HarithmaSalesAppv2
     {
         public int DiscountID { get; set; }
         public Nullable<int> ItemID { get; set; }
-        public Nullable<decimal> DiscountValue { get; set; }
+        public decimal DiscountValue { get; set; }
         public Nullable<System.DateTime> DiscountStartDate { get; set; }
-        public Nullable<System.DateTime> DiscountEndDate { get; set; }
+        public System.DateTime DiscountEndDate { get; set; }
         public Nullable<int> DiscountDuration { get; set; }
         public string DiscountStatus { get; set; }
     
