@@ -27,8 +27,8 @@ namespace HarithmaSalesAppv2
             txtSellingPrice.Text = "";
             txtQuantity.Value = 0;
             txtRemarks.Text = "";
-            itemModel.ItemID = 0;
-            inventoryModel.InventoryID = 0;
+            itemModel = new Item();
+            inventoryModel = new Inventory();
         }
 
         void Populate(int ItemID)
@@ -90,15 +90,12 @@ namespace HarithmaSalesAppv2
                     inventoryModel.Quantity = Convert.ToInt32(txtQuantity.Value);
                     inventoryModel.Remarks = txtRemarks.Text.Trim();
                     db.Inventories.Add(inventoryModel);
+                    db.SaveChanges();
 
-
-                    /*
                     itemModel.ItemAvailableQuantity = itemModel.ItemAvailableQuantity + inventoryModel.Quantity;
                     itemModel.ItemStockPrice = inventoryModel.StockPrice;
                     itemModel.ItemSellingPrice = inventoryModel.SellingPrice;
                     db.Entry(itemModel).State = System.Data.Entity.EntityState.Modified;
-                    */
-
                     db.SaveChanges();
 
                     lblStatus.Text = "Stock added.";
