@@ -12,6 +12,7 @@ namespace HarithmaSalesAppv2
 {
     public partial class Main : Form
     {
+        Functions perform = new Functions();
         public Main()
         {
             InitializeComponent();
@@ -46,5 +47,6 @@ namespace HarithmaSalesAppv2
             InvoiceForm f5 = new InvoiceForm();
             f5.Show();
         }
+
     }
 }

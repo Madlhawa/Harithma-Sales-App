@@ -61,8 +61,15 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
+      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
       <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
@@ -136,6 +143,7 @@
     <Compile Include="DiscountForm.Designer.cs">
       <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="Inventory.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -147,6 +155,12 @@
     </Compile>
     <Compile Include="Invoice.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InvoiceForm.Designer.cs">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Item.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -180,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InvoiceForm.resx">
+      <DependentUpon>InvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemMenu.resx">
       <DependentUpon>ItemMenu.cs</DependentUpon>
