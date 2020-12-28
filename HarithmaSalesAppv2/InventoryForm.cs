@@ -66,7 +66,6 @@ namespace HarithmaSalesAppv2
             if (dgvItem.CurrentRow.Index != -1)
             {
                 itemModel.ItemID = Convert.ToInt32(dgvItem.CurrentRow.Cells[0].Value);
-                lblStatus.Text = itemModel.ItemID.ToString();
                 using (HarithmaSalesEntities db = new HarithmaSalesEntities())
                 {
                     itemModel = db.Items.Where(x => x.ItemID == itemModel.ItemID).FirstOrDefault();
