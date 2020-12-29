@@ -20,8 +20,9 @@ namespace HarithmaSalesAppv2
 
         Functions perform = new Functions();
         Item itemModel = new Item();
-        List<Item> listItem = new List<Item>();
-
+        //List<Item> listItem = new List<Item>();
+        BindingList<Item> listItem = new BindingList<Item>();
+        
         void ItemSelect()
         {
             itemModel = perform.ItemList(Convert.ToInt32(dgvItem.CurrentRow.Cells[0].Value), "").First();
@@ -34,6 +35,8 @@ namespace HarithmaSalesAppv2
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtCode;
+            dgvInvoice.AutoGenerateColumns = false;
+            dgvInvoice.DataSource = listItem;
         }
 
         private void txtCode_OnValueChanged(object sender, EventArgs e)
@@ -98,11 +101,20 @@ namespace HarithmaSalesAppv2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            itemModel.ItemAvailableQuantity = Convert.ToInt32(nupQuantity.Value);
             listItem.Add(itemModel);
-            dgvInvoice.AutoGenerateColumns = false;
-            dgvInvoice.DataSource = listItem;
+            
             this.ActiveControl = txtCode;
             itemModel = new Item();
+        }
+
+        private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                this.ActiveControl = btnAdd;
+
+            }
         }
     }
 }

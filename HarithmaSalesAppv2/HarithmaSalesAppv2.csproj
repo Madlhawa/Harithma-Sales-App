@@ -162,6 +162,7 @@
     <Compile Include="InvoiceForm.Designer.cs">
       <DependentUpon>InvoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassInvoiceItem.cs" />
     <Compile Include="Item.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
