@@ -142,7 +142,7 @@ namespace HarithmaSalesAppv2
             this.dgvInvoice.EnableHeadersVisualStyles = false;
             this.dgvInvoice.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.dgvInvoice.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvInvoice.Location = new System.Drawing.Point(1196, 12);
+            this.dgvInvoice.Location = new System.Drawing.Point(639, 12);
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.ReadOnly = true;
             this.dgvInvoice.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -323,7 +323,7 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(1196, 639);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(639, 639);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(576, 210);
@@ -395,7 +395,7 @@ namespace HarithmaSalesAppv2
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
             this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -427,7 +427,7 @@ namespace HarithmaSalesAppv2
             this.dgvItem.EnableHeadersVisualStyles = false;
             this.dgvItem.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.dgvItem.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvItem.Location = new System.Drawing.Point(13, 56);
+            this.dgvItem.Location = new System.Drawing.Point(15, 56);
             this.dgvItem.Name = "dgvItem";
             this.dgvItem.ReadOnly = true;
             this.dgvItem.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -772,7 +772,7 @@ namespace HarithmaSalesAppv2
             // 
             // ItemQuantity
             // 
-            this.ItemQuantity.DataPropertyName = "ItemAvailableQuantity";
+            this.ItemQuantity.DataPropertyName = "invoiceItemQuantity";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.ItemQuantity.DefaultCellStyle = dataGridViewCellStyle4;
@@ -816,7 +816,7 @@ namespace HarithmaSalesAppv2
             // 
             // Total
             // 
-            this.Total.DataPropertyName = "Total";
+            this.Total.DataPropertyName = "invoiceItemAmount";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle7.Format = "N2";
             dataGridViewCellStyle7.NullValue = null;
@@ -845,7 +845,7 @@ namespace HarithmaSalesAppv2
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1784, 861);
+            this.ClientSize = new System.Drawing.Size(1227, 861);
             this.Controls.Add(this.bunifuGradientPanel2);
             this.Controls.Add(this.dgvItem);
             this.Controls.Add(this.txtName);

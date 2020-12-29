@@ -8,17 +8,30 @@ namespace HarithmaSalesAppv2
 {
     class ClassInvoiceItem : Item
     {
-        protected int invoiceItemQuantity;
-        protected double invoiceItemAmount;
-
-        public ClassInvoiceItem(Item item, int invoiceItemQuantity, double invoiceItemAmount)
+        public ClassInvoiceItem()
+        {
+            
+        }
+        
+        public void addItemAttributes(Item item)
         {
             this.ItemID = item.ItemID;
             this.ItemName = item.ItemName;
-            this.invoiceItemQuantity = invoiceItemQuantity;
             this.ItemSellingPrice = item.ItemSellingPrice;
-            this.invoiceItemAmount = invoiceItemAmount;
-            //this.ItemDiscount = item.Discounts
+            this.ItemAvailableQuantity = item.ItemAvailableQuantity;
+            this.ItemDiscount = item.ItemDiscount;
         }
+
+        public void setInvoiceItemQuantity(int quantity)
+        {
+            this.invoiceItemQuantity = quantity;
+            this.invoiceItemAmount = Convert.ToDouble(this.ItemSellingPrice) * invoiceItemQuantity;
+            this.invoiceItemDiscountAmount = this.invoiceItemAmount * Convert.ToDouble(this.ItemDiscount);
+
+        }
+
+        public int invoiceItemQuantity { get; set; }
+        public double invoiceItemAmount { get; set; }
+        public double invoiceItemDiscountAmount { get; set; }
     }
 }

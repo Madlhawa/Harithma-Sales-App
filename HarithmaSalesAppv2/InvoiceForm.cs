@@ -20,9 +20,9 @@ namespace HarithmaSalesAppv2
 
         Functions perform = new Functions();
         Item itemModel = new Item();
-        //List<Item> listItem = new List<Item>();
-        BindingList<Item> listItem = new BindingList<Item>();
-        
+        ClassInvoiceItem invoiceItemModel = new ClassInvoiceItem();
+        BindingList<ClassInvoiceItem> listInvoiceItem = new BindingList<ClassInvoiceItem>();
+
         void ItemSelect()
         {
             itemModel = perform.ItemList(Convert.ToInt32(dgvItem.CurrentRow.Cells[0].Value), "").First();
@@ -30,18 +30,20 @@ namespace HarithmaSalesAppv2
             lblCode.Text = itemModel.ItemID.ToString();
             lblDescription.Text = itemModel.ItemDescription;
             lblPrice.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", itemModel.ItemSellingPrice);
+
+            invoiceItemModel.addItemAttributes(itemModel);
             this.ActiveControl = nupQuantity;
         }
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtCode;
             dgvInvoice.AutoGenerateColumns = false;
-            dgvInvoice.DataSource = listItem;
+            dgvInvoice.DataSource = listInvoiceItem;
         }
 
         private void txtCode_OnValueChanged(object sender, EventArgs e)
         {
-            if (txtCode.Text != "")
+            if (txtCode.Text != "" && int.TryParse(txtCode.Text, out _))
             {
                 dgvItem.AutoGenerateColumns = false;
                 dgvItem.DataSource = perform.ItemList(Convert.ToInt32(txtCode.Text), "");
@@ -101,10 +103,11 @@ namespace HarithmaSalesAppv2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            itemModel.ItemAvailableQuantity = Convert.ToInt32(nupQuantity.Value);
-            listItem.Add(itemModel);
+            invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
+            listInvoiceItem.Add(invoiceItemModel);
             
             this.ActiveControl = txtCode;
+            invoiceItemModel = new ClassInvoiceItem();
             itemModel = new Item();
         }
 
@@ -113,7 +116,6 @@ namespace HarithmaSalesAppv2
             if (e.KeyData == Keys.Enter)
             {
                 this.ActiveControl = btnAdd;
-
             }
         }
     }
