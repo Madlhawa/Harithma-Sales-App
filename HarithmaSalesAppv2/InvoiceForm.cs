@@ -18,6 +18,7 @@ namespace HarithmaSalesAppv2
             InitializeComponent();
         }
 
+        double total, grandTotal, discount;
         Functions perform = new Functions();
         Item itemModel = new Item();
         ClassInvoiceItem invoiceItemModel = new ClassInvoiceItem();
@@ -34,6 +35,18 @@ namespace HarithmaSalesAppv2
             invoiceItemModel.addItemAttributes(itemModel);
             this.ActiveControl = nupQuantity;
         }
+
+        void UpdateInvoice()
+        {
+            total = listInvoiceItem.Sum(invoiceItem => invoiceItem.invoiceItemAmount);
+            discount = listInvoiceItem.Sum(invoiceItem => invoiceItem.invoiceItemDiscountAmount);
+            grandTotal = total - discount;
+
+            lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", total);
+            lblDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", discount);
+            lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", grandTotal);
+        }
+
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             this.ActiveControl = txtCode;
@@ -109,6 +122,8 @@ namespace HarithmaSalesAppv2
             this.ActiveControl = txtCode;
             invoiceItemModel = new ClassInvoiceItem();
             itemModel = new Item();
+
+            UpdateInvoice();
         }
 
         private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
@@ -117,6 +132,32 @@ namespace HarithmaSalesAppv2
             {
                 this.ActiveControl = btnAdd;
             }
+        }
+
+        private void dgvInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ClassInvoiceItem tempInvoiceItemModel = new ClassInvoiceItem();
+
+            if(e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex.Equals(2))
+                {
+                    tempInvoiceItemModel = listInvoiceItem[e.RowIndex];
+                    tempInvoiceItemModel.setInvoiceItemQuantity(tempInvoiceItemModel.invoiceItemQuantity - 1);
+                    listInvoiceItem[e.RowIndex] = tempInvoiceItemModel;
+                }
+                else if (e.ColumnIndex.Equals(4))
+                {
+                    tempInvoiceItemModel = listInvoiceItem[e.RowIndex];
+                    tempInvoiceItemModel.setInvoiceItemQuantity(tempInvoiceItemModel.invoiceItemQuantity + 1);
+                    listInvoiceItem[e.RowIndex] = tempInvoiceItemModel;
+                }
+                else if (e.ColumnIndex.Equals(7))
+                {
+                    listInvoiceItem.RemoveAt(e.RowIndex);
+                }
+            }
+            UpdateInvoice();
         }
     }
 }

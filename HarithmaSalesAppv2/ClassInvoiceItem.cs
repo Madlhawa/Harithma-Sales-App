@@ -30,6 +30,11 @@ namespace HarithmaSalesAppv2
 
         }
 
+        public void calculateInvoice()
+        {
+
+        }
+
         public int invoiceItemQuantity { get; set; }
         public double invoiceItemAmount { get; set; }
         public double invoiceItemDiscountAmount { get; set; }
