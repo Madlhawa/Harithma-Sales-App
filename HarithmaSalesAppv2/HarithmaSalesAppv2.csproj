@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -61,21 +61,23 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -213,6 +215,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
@@ -249,6 +252,9 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

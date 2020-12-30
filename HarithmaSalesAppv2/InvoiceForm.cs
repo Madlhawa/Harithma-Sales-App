@@ -51,6 +51,7 @@ namespace HarithmaSalesAppv2
         {
             this.ActiveControl = txtCode;
             dgvInvoice.AutoGenerateColumns = false;
+            dgvInvoice.AllowUserToAddRows = false;
             dgvInvoice.DataSource = listInvoiceItem;
         }
 
