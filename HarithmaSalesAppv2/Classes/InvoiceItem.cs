@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HarithmaSalesAppv2
 {
-    class ClassInvoiceItem : Item
+    class InvoiceItem : Item
     {
-        public ClassInvoiceItem()
+        public InvoiceItem()
         {
-            
+
         }
-        
+
         public void addItemAttributes(Item item)
         {
             this.ItemID = item.ItemID;

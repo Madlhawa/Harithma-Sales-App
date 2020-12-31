@@ -21,8 +21,8 @@ namespace HarithmaSalesAppv2
         double total, grandTotal, discount;
         Functions perform = new Functions();
         Item itemModel = new Item();
-        ClassInvoiceItem invoiceItemModel = new ClassInvoiceItem();
-        BindingList<ClassInvoiceItem> listInvoiceItem = new BindingList<ClassInvoiceItem>();
+        InvoiceItem invoiceItemModel = new InvoiceItem();
+        BindingList<InvoiceItem> listInvoiceItem = new BindingList<InvoiceItem>();
 
         void ItemSelect()
         {
@@ -121,7 +121,7 @@ namespace HarithmaSalesAppv2
             listInvoiceItem.Add(invoiceItemModel);
             
             this.ActiveControl = txtCode;
-            invoiceItemModel = new ClassInvoiceItem();
+            invoiceItemModel = new InvoiceItem();
             itemModel = new Item();
 
             UpdateInvoice();
@@ -142,7 +142,7 @@ namespace HarithmaSalesAppv2
 
         private void dgvInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            ClassInvoiceItem tempInvoiceItemModel = new ClassInvoiceItem();
+            InvoiceItem tempInvoiceItemModel = new InvoiceItem();
 
             if(e.RowIndex >= 0)
             {
