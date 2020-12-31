@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,6 +72,12 @@
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
       <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
       <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
@@ -252,6 +258,7 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\starter64.png" />
     <None Include="Resources\remove.png" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\minus.png" />

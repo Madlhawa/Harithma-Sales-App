@@ -127,6 +127,11 @@ namespace HarithmaSalesAppv2
             UpdateInvoice();
         }
 
+        private void bunifuCustomLabel13_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
