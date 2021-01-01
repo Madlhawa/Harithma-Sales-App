@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HarithmaSalesAppv2
@@ -18,11 +13,13 @@ namespace HarithmaSalesAppv2
             InitializeComponent();
         }
 
-        double total, grandTotal, discount;
+        //double total, grandTotal, discount;
         Functions perform = new Functions();
         Item itemModel = new Item();
         InvoiceItem invoiceItemModel = new InvoiceItem();
-        BindingList<InvoiceItem> listInvoiceItem = new BindingList<InvoiceItem>();
+        Classes.CurrentInvoice invoiceModel = new Classes.CurrentInvoice();
+
+        //BindingList<InvoiceItem> listInvoiceItem = new BindingList<InvoiceItem>();
 
         void ItemSelect()
         {
@@ -38,13 +35,11 @@ namespace HarithmaSalesAppv2
 
         void UpdateInvoice()
         {
-            total = listInvoiceItem.Sum(invoiceItem => invoiceItem.invoiceItemAmount);
-            discount = listInvoiceItem.Sum(invoiceItem => invoiceItem.invoiceItemDiscountAmount);
-            grandTotal = total - discount;
-
-            lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", total);
-            lblDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", discount);
-            lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", grandTotal);
+            lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.total);
+            lblDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceDiscount);
+            lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmount);
+            lblRecieved.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountRecieved);
+            lblBalance.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceBalance);
         }
 
         private void InvoiceForm_Load(object sender, EventArgs e)
@@ -52,7 +47,7 @@ namespace HarithmaSalesAppv2
             this.ActiveControl = txtCode;
             dgvInvoice.AutoGenerateColumns = false;
             dgvInvoice.AllowUserToAddRows = false;
-            dgvInvoice.DataSource = listInvoiceItem;
+            dgvInvoice.DataSource = invoiceModel.itemList;
         }
 
         private void txtCode_OnValueChanged(object sender, EventArgs e)
@@ -66,7 +61,7 @@ namespace HarithmaSalesAppv2
 
         private void txtName_OnValueChanged(object sender, EventArgs e)
         {
-            if(txtName.Text != "")
+            if (txtName.Text != "")
             {
                 dgvItem.AutoGenerateColumns = false;
                 dgvItem.DataSource = perform.ItemList(0, txtName.Text.Trim());
@@ -92,7 +87,7 @@ namespace HarithmaSalesAppv2
         private void dgvItem_KeyDown(object sender, KeyEventArgs e)
         {
             if (dgvItem.CurrentCell != null && e.KeyData == Keys.Enter)
-                    ItemSelect();
+                ItemSelect();
         }
 
         private void txtCode_KeyDown(object sender, KeyEventArgs e)
@@ -118,8 +113,8 @@ namespace HarithmaSalesAppv2
         private void btnAdd_Click(object sender, EventArgs e)
         {
             invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
-            listInvoiceItem.Add(invoiceItemModel);
-            
+            invoiceModel.addItem(invoiceItemModel);
+
             this.ActiveControl = txtCode;
             invoiceItemModel = new InvoiceItem();
             itemModel = new Item();
@@ -142,28 +137,97 @@ namespace HarithmaSalesAppv2
 
         private void dgvInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            InvoiceItem tempInvoiceItemModel = new InvoiceItem();
-
-            if(e.RowIndex >= 0)
-            {
-                if (e.ColumnIndex.Equals(2))
-                {
-                    tempInvoiceItemModel = listInvoiceItem[e.RowIndex];
-                    tempInvoiceItemModel.setInvoiceItemQuantity(tempInvoiceItemModel.invoiceItemQuantity - 1);
-                    listInvoiceItem[e.RowIndex] = tempInvoiceItemModel;
-                }
-                else if (e.ColumnIndex.Equals(4))
-                {
-                    tempInvoiceItemModel = listInvoiceItem[e.RowIndex];
-                    tempInvoiceItemModel.setInvoiceItemQuantity(tempInvoiceItemModel.invoiceItemQuantity + 1);
-                    listInvoiceItem[e.RowIndex] = tempInvoiceItemModel;
-                }
-                else if (e.ColumnIndex.Equals(7))
-                {
-                    listInvoiceItem.RemoveAt(e.RowIndex);
-                }
-            }
+            if (e.RowIndex >= 0)
+                invoiceModel.updateItem(e.ColumnIndex, e.RowIndex);
             UpdateInvoice();
+        }
+
+        private void btnRecievedAmount_Click(object sender, EventArgs e)
+        {
+            decimal value;
+            if (decimal.TryParse(txtRecievedAmount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out value))
+                invoiceModel.setRecievedAmount(value);
+            UpdateInvoice();
+        }
+
+        private void txtRecievedAmount_Leave(object sender, EventArgs e)
+        {
+            Double value;
+            if (Double.TryParse(txtRecievedAmount.Text, out value))
+                txtRecievedAmount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", value);
+            else
+                txtRecievedAmount.Text = String.Empty;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            /*Forms.RecieptForm f1 = new Forms.RecieptForm();
+            f1.invoice = invoiceModel;
+            f1.Show();*/
+
+            /*
+            Reports.crptInvoice cr = new Reports.crptInvoice();
+
+            cr.SetDataSource(invoiceModel.itemList);
+            cr.SetParameterValue("total", invoiceModel.total);
+            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
+            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
+            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
+            cr.SetParameterValue("InvoiceBalance", invoiceModel.InvoiceBalance);
+
+            crptv.ReportSource = cr;
+            crptv.Refresh();
+            */
+
+
+
+            /*
+            Reports.dsItemName.dtItemNameDataTable dt = new Reports.dsItemName.dtItemNameDataTable();
+
+            foreach (InvoiceItem item in invoiceModel.itemList)
+            {
+                MessageBox.Show(item.ItemName.ToString());
+                dt.Rows.Add(item.ItemName);
+            }
+
+            Reports.dsItemName ds = new Reports.dsItemName();
+            ds.Tables.Add(dt);
+            Reports.crptItemName cr = new Reports.crptItemName();
+            cr.SetDataSource(ds);
+
+            crptv.ReportSource = cr;
+            crptv.Refresh();
+            */
+
+            DataSet ds = new DataSet(); 
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("ItemName", typeof(String));
+            dt.Columns.Add("ItemSellingPrice", typeof(decimal));
+            dt.Columns.Add("InvoiceItemQuantity", typeof(int));
+            dt.Columns.Add("InvoiceItemAmount", typeof(decimal));
+
+            foreach (InvoiceItem item in invoiceModel.itemList)
+            {
+                MessageBox.Show(item.ItemName.ToString());
+                dt.Rows.Add(item.ItemName,item.ItemSellingPrice,item.invoiceItemQuantity,item.invoiceItemAmount);
+            }
+            ds.Tables.Add(dt);
+            ds.WriteXmlSchema("invoiceItems.xml");
+
+            Reports.crptInvoice cr = new Reports.crptInvoice();
+            cr.SetDataSource(ds);
+            cr.SetParameterValue("total", invoiceModel.total);
+            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
+            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
+            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
+            cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
+
+            crptv.ReportSource = cr;
+            crptv.Refresh();
+
+            cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
+            cr.PrintToPrinter(1, false, 0, 0);
         }
     }
 }

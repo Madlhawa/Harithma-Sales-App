@@ -2,7 +2,7 @@
 
 namespace HarithmaSalesAppv2
 {
-    class InvoiceItem : Item
+    public class InvoiceItem : Item
     {
         public InvoiceItem()
         {
@@ -15,24 +15,18 @@ namespace HarithmaSalesAppv2
             this.ItemName = item.ItemName;
             this.ItemSellingPrice = item.ItemSellingPrice;
             this.ItemAvailableQuantity = item.ItemAvailableQuantity;
-            this.ItemDiscount = item.ItemDiscount;
+            this.ItemDiscount = item.ItemDiscount.GetValueOrDefault(0);
         }
 
         public void setInvoiceItemQuantity(int quantity)
         {
             this.invoiceItemQuantity = quantity;
-            this.invoiceItemAmount = Convert.ToDouble(this.ItemSellingPrice) * invoiceItemQuantity;
-            this.invoiceItemDiscountAmount = this.invoiceItemAmount * Convert.ToDouble(this.ItemDiscount);
-
-        }
-
-        public void calculateInvoice()
-        {
-
+            this.invoiceItemAmount = this.ItemSellingPrice * invoiceItemQuantity;
+            this.invoiceItemDiscountAmount = Convert.ToDecimal(this.invoiceItemAmount * this.ItemDiscount);
         }
 
         public int invoiceItemQuantity { get; set; }
-        public double invoiceItemAmount { get; set; }
-        public double invoiceItemDiscountAmount { get; set; }
+        public decimal invoiceItemAmount { get; set; }
+        public decimal invoiceItemDiscountAmount { get; set; }
     }
 }
