@@ -58,6 +58,6 @@ namespace HarithmaSalesAppv2.Forms
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crptv;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crptv;
     }
 }

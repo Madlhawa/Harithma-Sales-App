@@ -212,25 +212,6 @@
     <Compile Include="Forms\SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\dsItemName.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsItemName.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\dtInvoice.cs">
-      <DependentUpon>dtInvoice.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Reports\dtInvoice.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dtInvoice.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reports\crptInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -272,10 +253,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EntityDeploy Include="DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
@@ -308,28 +285,6 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <None Include="Reports\dsItemName.xsc">
-      <DependentUpon>dsItemName.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\dsItemName.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsItemName.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reports\dsItemName.xss">
-      <DependentUpon>dsItemName.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\dtInvoice.xsc">
-      <DependentUpon>dtInvoice.xsd</DependentUpon>
-    </None>
-    <None Include="Reports\dtInvoice.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dtInvoice.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Reports\dtInvoice.xss">
-      <DependentUpon>dtInvoice.xsd</DependentUpon>
-    </None>
     <None Include="Resources\starter64.png" />
     <None Include="Resources\remove.png" />
     <None Include="Resources\plus.png" />

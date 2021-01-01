@@ -18,6 +18,7 @@ namespace HarithmaSalesAppv2
         Item itemModel = new Item();
         InvoiceItem invoiceItemModel = new InvoiceItem();
         Classes.CurrentInvoice invoiceModel = new Classes.CurrentInvoice();
+        Reports.crptInvoice cr = new Reports.crptInvoice();
 
         //BindingList<InvoiceItem> listInvoiceItem = new BindingList<InvoiceItem>();
 
@@ -40,6 +41,32 @@ namespace HarithmaSalesAppv2
             lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmount);
             lblRecieved.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountRecieved);
             lblBalance.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceBalance);
+        }
+
+        void GenerateReciept()
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("ItemName", typeof(String));
+            dt.Columns.Add("ItemSellingPrice", typeof(decimal));
+            dt.Columns.Add("InvoiceItemQuantity", typeof(int));
+            dt.Columns.Add("InvoiceItemAmount", typeof(decimal));
+
+            foreach (InvoiceItem item in invoiceModel.itemList)
+            {
+                MessageBox.Show(item.ItemName.ToString());
+                dt.Rows.Add(item.ItemName, item.ItemSellingPrice, item.invoiceItemQuantity, item.invoiceItemAmount);
+            }
+            ds.Tables.Add(dt);
+
+            cr = new Reports.crptInvoice();
+            cr.SetDataSource(ds);
+            cr.SetParameterValue("total", invoiceModel.total);
+            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
+            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
+            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
+            cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
         }
 
         private void InvoiceForm_Load(object sender, EventArgs e)
@@ -161,73 +188,18 @@ namespace HarithmaSalesAppv2
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            /*Forms.RecieptForm f1 = new Forms.RecieptForm();
-            f1.invoice = invoiceModel;
-            f1.Show();*/
-
-            /*
-            Reports.crptInvoice cr = new Reports.crptInvoice();
-
-            cr.SetDataSource(invoiceModel.itemList);
-            cr.SetParameterValue("total", invoiceModel.total);
-            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
-            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
-            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
-            cr.SetParameterValue("InvoiceBalance", invoiceModel.InvoiceBalance);
-
-            crptv.ReportSource = cr;
-            crptv.Refresh();
-            */
-
-
-
-            /*
-            Reports.dsItemName.dtItemNameDataTable dt = new Reports.dsItemName.dtItemNameDataTable();
-
-            foreach (InvoiceItem item in invoiceModel.itemList)
-            {
-                MessageBox.Show(item.ItemName.ToString());
-                dt.Rows.Add(item.ItemName);
-            }
-
-            Reports.dsItemName ds = new Reports.dsItemName();
-            ds.Tables.Add(dt);
-            Reports.crptItemName cr = new Reports.crptItemName();
-            cr.SetDataSource(ds);
-
-            crptv.ReportSource = cr;
-            crptv.Refresh();
-            */
-
-            DataSet ds = new DataSet(); 
-            DataTable dt = new DataTable();
-
-            dt.Columns.Add("ItemName", typeof(String));
-            dt.Columns.Add("ItemSellingPrice", typeof(decimal));
-            dt.Columns.Add("InvoiceItemQuantity", typeof(int));
-            dt.Columns.Add("InvoiceItemAmount", typeof(decimal));
-
-            foreach (InvoiceItem item in invoiceModel.itemList)
-            {
-                MessageBox.Show(item.ItemName.ToString());
-                dt.Rows.Add(item.ItemName,item.ItemSellingPrice,item.invoiceItemQuantity,item.invoiceItemAmount);
-            }
-            ds.Tables.Add(dt);
-            ds.WriteXmlSchema("invoiceItems.xml");
-
-            Reports.crptInvoice cr = new Reports.crptInvoice();
-            cr.SetDataSource(ds);
-            cr.SetParameterValue("total", invoiceModel.total);
-            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
-            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
-            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
-            cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
-
-            crptv.ReportSource = cr;
-            crptv.Refresh();
-
+            GenerateReciept();
             cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
             cr.PrintToPrinter(1, false, 0, 0);
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            GenerateReciept();
+            Forms.RecieptForm f1 = new Forms.RecieptForm();
+            f1.crptv.ReportSource = cr;
+            f1.crptv.Refresh();
+            f1.Show();
         }
     }
 }

@@ -52,6 +52,7 @@ namespace HarithmaSalesAppv2
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -105,7 +106,7 @@ namespace HarithmaSalesAppv2
             this.txtRecievedAmount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnPrint = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.crptv = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btnView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
@@ -139,7 +140,7 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(1275, 639);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(637, 639);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(576, 210);
@@ -726,7 +727,7 @@ namespace HarithmaSalesAppv2
             this.dgvInvoice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvInvoice.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.dgvInvoice.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvInvoice.Location = new System.Drawing.Point(1275, 12);
+            this.dgvInvoice.Location = new System.Drawing.Point(637, 12);
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.ReadOnly = true;
             this.dgvInvoice.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -1038,7 +1039,7 @@ namespace HarithmaSalesAppv2
             this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnPrint.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.IconMarginLeft = 10;
-            this.btnPrint.IconPadding = 30;
+            this.btnPrint.IconPadding = 20;
             this.btnPrint.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.IdleBorderColor = System.Drawing.Color.White;
             this.btnPrint.IdleBorderRadius = 7;
@@ -1047,7 +1048,7 @@ namespace HarithmaSalesAppv2
             this.btnPrint.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.IdleIconLeftImage")));
             this.btnPrint.IdleIconRightImage = null;
             this.btnPrint.IndicateFocus = false;
-            this.btnPrint.Location = new System.Drawing.Point(190, 724);
+            this.btnPrint.Location = new System.Drawing.Point(425, 688);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnPrint.onHoverState.BorderRadius = 7;
@@ -1073,30 +1074,90 @@ namespace HarithmaSalesAppv2
             this.btnPrint.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnPrint.OnPressedState.IconLeftImage = null;
             this.btnPrint.OnPressedState.IconRightImage = null;
-            this.btnPrint.Size = new System.Drawing.Size(262, 97);
+            this.btnPrint.Size = new System.Drawing.Size(201, 73);
             this.btnPrint.TabIndex = 39;
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnPrint.TextMarginLeft = 0;
             this.btnPrint.UseDefaultRadiusAndThickness = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // crptv
+            // btnView
             // 
-            this.crptv.ActiveViewIndex = -1;
-            this.crptv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crptv.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crptv.Location = new System.Drawing.Point(633, 13);
-            this.crptv.Name = "crptv";
-            this.crptv.Size = new System.Drawing.Size(636, 664);
-            this.crptv.TabIndex = 40;
+            this.btnView.AllowToggling = false;
+            this.btnView.AnimationSpeed = 200;
+            this.btnView.AutoGenerateColors = false;
+            this.btnView.BackColor = System.Drawing.Color.Transparent;
+            this.btnView.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.btnView.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnView.BackgroundImage")));
+            this.btnView.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnView.ButtonText = "View";
+            this.btnView.ButtonTextMarginLeft = 0;
+            this.btnView.ColorContrastOnClick = 45;
+            this.btnView.ColorContrastOnHover = 45;
+            this.btnView.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btnView.CustomizableEdges = borderEdges4;
+            this.btnView.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnView.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.btnView.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnView.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnView.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnView.Font = new System.Drawing.Font("Segoe UI Semibold", 25.75F);
+            this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnView.IconMarginLeft = 10;
+            this.btnView.IconPadding = 20;
+            this.btnView.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnView.IdleBorderColor = System.Drawing.Color.White;
+            this.btnView.IdleBorderRadius = 7;
+            this.btnView.IdleBorderThickness = 2;
+            this.btnView.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.btnView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnView.IdleIconLeftImage")));
+            this.btnView.IdleIconRightImage = null;
+            this.btnView.IndicateFocus = false;
+            this.btnView.Location = new System.Drawing.Point(425, 776);
+            this.btnView.Name = "btnView";
+            this.btnView.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.onHoverState.BorderRadius = 7;
+            this.btnView.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnView.onHoverState.BorderThickness = 2;
+            this.btnView.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btnView.onHoverState.IconLeftImage = null;
+            this.btnView.onHoverState.IconRightImage = null;
+            this.btnView.OnIdleState.BorderColor = System.Drawing.Color.White;
+            this.btnView.OnIdleState.BorderRadius = 7;
+            this.btnView.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnView.OnIdleState.BorderThickness = 2;
+            this.btnView.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.btnView.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.OnIdleState.IconLeftImage")));
+            this.btnView.OnIdleState.IconRightImage = null;
+            this.btnView.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.OnPressedState.BorderRadius = 7;
+            this.btnView.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnView.OnPressedState.BorderThickness = 2;
+            this.btnView.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnView.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btnView.OnPressedState.IconLeftImage = null;
+            this.btnView.OnPressedState.IconRightImage = null;
+            this.btnView.Size = new System.Drawing.Size(201, 73);
+            this.btnView.TabIndex = 40;
+            this.btnView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnView.TextMarginLeft = 0;
+            this.btnView.UseDefaultRadiusAndThickness = true;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1863, 861);
-            this.Controls.Add(this.crptv);
+            this.ClientSize = new System.Drawing.Size(1225, 861);
+            this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.bunifuGradientPanel3);
             this.Controls.Add(this.dgvInvoice);
@@ -1179,6 +1240,6 @@ namespace HarithmaSalesAppv2
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtRecievedAmount;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnPrint;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crptv;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnView;
     }
 }
