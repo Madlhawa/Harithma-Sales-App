@@ -90,7 +90,7 @@ namespace HarithmaSalesAppv2.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_total {
+        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceDiscount {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace HarithmaSalesAppv2.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceDiscount {
+        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceAmount {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,7 +106,7 @@ namespace HarithmaSalesAppv2.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceAmount {
+        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceAmountRecieved {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,7 +114,7 @@ namespace HarithmaSalesAppv2.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceAmountRecieved {
+        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceBalance {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -122,7 +122,7 @@ namespace HarithmaSalesAppv2.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceBalance {
+        public CrystalDecisions.Shared.IParameterField Parameter_InvoiceAmountPayable {
             get {
                 return this.DataDefinition.ParameterFields[4];
             }

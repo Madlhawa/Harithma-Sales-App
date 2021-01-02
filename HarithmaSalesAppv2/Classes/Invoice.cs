@@ -14,13 +14,12 @@ namespace HarithmaSalesAppv2.Classes
         }
 
         public BindingList<InvoiceItem> itemList { get; set; }
-        public decimal total { get; set; }
 
         private void updateInvoice()
         {
-            this.total = this.itemList.Sum(tot => tot.invoiceItemAmount);
+            this.InvoiceAmount = this.itemList.Sum(tot => tot.invoiceItemAmount);
             this.InvoiceDiscount = this.itemList.Sum(dis => dis.invoiceItemDiscountAmount);
-            this.InvoiceAmount = (decimal)(this.total - this.InvoiceDiscount);
+            this.InvoiceAmountPayable = (decimal)(this.InvoiceAmount - this.InvoiceDiscount);
         }
 
         public void addItem(InvoiceItem item)
@@ -32,7 +31,7 @@ namespace HarithmaSalesAppv2.Classes
         public void setRecievedAmount(decimal amount)
         {
             this.InvoiceAmountRecieved = amount;
-            this.InvoiceBalance = this.InvoiceAmountRecieved - this.InvoiceAmount;
+            this.InvoiceBalance = this.InvoiceAmountRecieved - this.InvoiceAmountPayable;
         }
 
         public void updateItem(int column, int row)

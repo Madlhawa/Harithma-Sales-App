@@ -666,7 +666,6 @@ namespace HarithmaSalesAppv2
             this.bunifuCustomLabel13.TabIndex = 30;
             this.bunifuCustomLabel13.Text = "Price";
             this.bunifuCustomLabel13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuCustomLabel13.Click += new System.EventHandler(this.bunifuCustomLabel13_Click);
             // 
             // lblCode
             // 

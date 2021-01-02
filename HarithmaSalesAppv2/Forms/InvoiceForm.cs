@@ -36,37 +36,41 @@ namespace HarithmaSalesAppv2
 
         void UpdateInvoice()
         {
-            lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.total);
+            lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmount);
             lblDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceDiscount);
-            lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmount);
+            lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountPayable);
             lblRecieved.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountRecieved);
             lblBalance.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceBalance);
         }
 
         void GenerateReciept()
         {
-            DataSet ds = new DataSet();
-            DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                DataTable dt = new DataTable();
 
-            dt.Columns.Add("ItemName", typeof(String));
-            dt.Columns.Add("ItemSellingPrice", typeof(decimal));
-            dt.Columns.Add("InvoiceItemQuantity", typeof(int));
-            dt.Columns.Add("InvoiceItemAmount", typeof(decimal));
+                dt.Columns.Add("ItemName", typeof(String));
+                dt.Columns.Add("ItemSellingPrice", typeof(decimal));
+                dt.Columns.Add("InvoiceItemQuantity", typeof(int));
+                dt.Columns.Add("InvoiceItemAmount", typeof(decimal));
 
-            foreach (InvoiceItem item in invoiceModel.itemList)
-            {
-                MessageBox.Show(item.ItemName.ToString());
-                dt.Rows.Add(item.ItemName, item.ItemSellingPrice, item.invoiceItemQuantity, item.invoiceItemAmount);
-            }
-            ds.Tables.Add(dt);
+                foreach (InvoiceItem item in invoiceModel.itemList)
+                {
+                    dt.Rows.Add(item.ItemName, item.ItemSellingPrice, item.invoiceItemQuantity, item.invoiceItemAmount);
+                }
+                ds.Tables.Add(dt);
 
-            cr = new Reports.crptInvoice();
-            cr.SetDataSource(ds);
-            cr.SetParameterValue("total", invoiceModel.total);
-            cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
-            cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
-            cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
-            cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
+                cr = new Reports.crptInvoice();
+                cr.SetDataSource(ds);
+                cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
+                cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
+                cr.SetParameterValue("InvoiceAmountPayable", invoiceModel.InvoiceAmountPayable);
+                cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
+                cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
+        }
+
+        void Clear()
+        {
+            lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "_";
         }
 
         private void InvoiceForm_Load(object sender, EventArgs e)
@@ -139,19 +143,17 @@ namespace HarithmaSalesAppv2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
-            invoiceModel.addItem(invoiceItemModel);
+            if (invoiceItemModel.ItemID > 0) { 
+                invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
+                invoiceModel.addItem(invoiceItemModel);
 
-            this.ActiveControl = txtCode;
-            invoiceItemModel = new InvoiceItem();
-            itemModel = new Item();
+                this.ActiveControl = txtCode;
+                invoiceItemModel = new InvoiceItem();
+                itemModel = new Item();
 
-            UpdateInvoice();
-        }
-
-        private void bunifuCustomLabel13_Click(object sender, EventArgs e)
-        {
-
+                UpdateInvoice();
+                Clear();
+            }
         }
 
         private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
@@ -188,18 +190,26 @@ namespace HarithmaSalesAppv2
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            GenerateReciept();
-            cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
-            cr.PrintToPrinter(1, false, 0, 0);
+
+            if (invoiceModel.InvoiceAmountRecieved > 0)
+            {
+                GenerateReciept();
+                cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
+                cr.PrintToPrinter(1, false, 0, 0);
+            }
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            GenerateReciept();
-            Forms.RecieptForm f1 = new Forms.RecieptForm();
-            f1.crptv.ReportSource = cr;
-            f1.crptv.Refresh();
-            f1.Show();
+
+            if (invoiceModel.InvoiceAmountRecieved > 0)
+            {
+                GenerateReciept();
+                Forms.RecieptForm f1 = new Forms.RecieptForm();
+                f1.crptv.ReportSource = cr;
+                f1.crptv.Refresh();
+                f1.Show();
+            }
         }
     }
 }

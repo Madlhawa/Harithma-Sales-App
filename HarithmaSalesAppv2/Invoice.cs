@@ -28,6 +28,7 @@ namespace HarithmaSalesAppv2
         public Nullable<decimal> InvoiceBalance { get; set; }
         public string InvoicePaymentMethod { get; set; }
         public string InvoiceRemarks { get; set; }
+        public Nullable<decimal> InvoiceAmountPayable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item_Invoice> Item_Invoice { get; set; }
