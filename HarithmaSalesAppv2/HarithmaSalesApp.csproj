@@ -58,32 +58,32 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Core, Version=1.11.5.2, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.Core.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForm.BunifuShadowPanel">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForm.BunifuShadowPanel.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuButton">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
     </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>E:\Projects\HarithmaSalesApp\Media\e\[FTUApps.com] - Bunifu UI WinForms v1.11.5.21   Dataviz Advanced v1.1.1.5   Activator\Bunifu UI WinForms 1.11.5.21\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifui\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
