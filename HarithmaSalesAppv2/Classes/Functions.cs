@@ -23,5 +23,33 @@ namespace HarithmaSalesAppv2
 
             }
         }
+
+        public void submitInvoice(Classes.CurrentInvoice currentInvoice)
+        {
+            Invoice invoice = new Invoice();
+
+            foreach(InvoiceItem currentItem in currentInvoice.itemList)
+            {
+                Item_Invoice itemInvoice = new Item_Invoice();
+                itemInvoice.ItemID = currentItem.ItemID;
+                itemInvoice.Quantity = currentItem.invoiceItemQuantity;
+                itemInvoice.Amount = currentItem.invoiceItemAmount;
+                itemInvoice.Discount = currentItem.invoiceItemDiscountAmount;
+
+                invoice.Item_Invoice.Add(itemInvoice);
+            }
+
+            invoice.InvoiceAmount = currentInvoice.InvoiceAmount;
+            invoice.InvoiceAmountPayable = currentInvoice.InvoiceAmountPayable;
+            invoice.InvoiceAmountRecieved = currentInvoice.InvoiceAmountRecieved;
+            invoice.InvoiceBalance = currentInvoice.InvoiceBalance;
+            invoice.InvoiceDiscount = currentInvoice.InvoiceDiscount;
+
+            using (HarithmaSalesEntities db = new HarithmaSalesEntities())
+            {
+                db.Invoices.Add(invoice);
+                db.SaveChanges();
+            }
+        }
     }
 }
