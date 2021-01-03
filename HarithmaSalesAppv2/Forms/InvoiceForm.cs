@@ -211,5 +211,16 @@ namespace HarithmaSalesAppv2
                 f1.Show();
             }
         }
+
+        private void btnSubmitInvoice_Click(object sender, EventArgs e)
+        {
+            if (invoiceModel.InvoiceAmountRecieved > 0)
+            {
+                GenerateReciept();
+                cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
+                cr.PrintToPrinter(1, false, 0, 0);
+                perform.submitInvoice(invoiceModel);
+            }
+        }
     }
 }
