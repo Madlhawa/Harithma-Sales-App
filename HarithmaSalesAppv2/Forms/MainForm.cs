@@ -48,5 +48,21 @@ namespace HarithmaSalesAppv2
             f5.Show();
         }
 
+        private void Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SettingBtn_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.SettingBtn, "Settings");
+        }
+
+        private void SignoutBtn_MouseHover(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
+            ToolTip1.SetToolTip(this.SignoutBtn, "Sign Out");
+        }
     }
 }
