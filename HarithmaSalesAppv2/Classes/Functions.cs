@@ -44,6 +44,8 @@ namespace HarithmaSalesAppv2
             invoice.InvoiceAmountRecieved = currentInvoice.InvoiceAmountRecieved;
             invoice.InvoiceBalance = currentInvoice.InvoiceBalance;
             invoice.InvoiceDiscount = currentInvoice.InvoiceDiscount;
+            invoice.InvoicePaymentMethod = currentInvoice.InvoicePaymentMethod;
+            invoice.InvoiceRemarks = currentInvoice.InvoiceRemarks;
 
             using (HarithmaSalesEntities db = new HarithmaSalesEntities())
             {

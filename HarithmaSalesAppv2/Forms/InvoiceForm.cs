@@ -73,12 +73,42 @@ namespace HarithmaSalesAppv2
             lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "_";
         }
 
-        private void InvoiceForm_Load(object sender, EventArgs e)
+        void ClearAll()
         {
+            invoiceModel.itemList.Clear();
+            itemModel = new Item();
+            invoiceItemModel = new InvoiceItem();
+            invoiceModel = new Classes.CurrentInvoice();
+            lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "_";
+            lblTotal.Text = lblRecieved.Text = lblGrandTotal.Text = lblDiscount.Text = lblBalance.Text = "_";
+            txtRecievedAmount.Text = "Received Amount";
+            txtRemarks.Text = "Remarks";
+
             this.ActiveControl = txtCode;
             dgvInvoice.AutoGenerateColumns = false;
             dgvInvoice.AllowUserToAddRows = false;
             dgvInvoice.DataSource = invoiceModel.itemList;
+        }
+
+        void addItem()
+        {
+            if (invoiceItemModel.ItemID > 0)
+            {
+                invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
+                invoiceModel.addItem(invoiceItemModel);
+
+                this.ActiveControl = txtCode;
+                invoiceItemModel = new InvoiceItem();
+                itemModel = new Item();
+
+                UpdateInvoice();
+                Clear();
+            }
+        }
+
+        private void InvoiceForm_Load(object sender, EventArgs e)
+        {
+            ClearAll();
         }
 
         private void txtCode_OnValueChanged(object sender, EventArgs e)
@@ -143,24 +173,14 @@ namespace HarithmaSalesAppv2
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (invoiceItemModel.ItemID > 0) { 
-                invoiceItemModel.setInvoiceItemQuantity(Convert.ToInt32(nupQuantity.Value));
-                invoiceModel.addItem(invoiceItemModel);
-
-                this.ActiveControl = txtCode;
-                invoiceItemModel = new InvoiceItem();
-                itemModel = new Item();
-
-                UpdateInvoice();
-                Clear();
-            }
+            addItem();
         }
 
         private void nupQuantity_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter)
             {
-                this.ActiveControl = btnAdd;
+                addItem();
             }
         }
 
@@ -176,6 +196,12 @@ namespace HarithmaSalesAppv2
             decimal value;
             if (decimal.TryParse(txtRecievedAmount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out value))
                 invoiceModel.setRecievedAmount(value);
+
+            if (txtRemarks.Text != "Remarks")
+                invoiceModel.InvoiceRemarks = txtRemarks.Text.ToString().Trim();
+
+            invoiceModel.InvoicePaymentMethod = drpPaymentMethod.selectedValue.ToString();
+
             UpdateInvoice();
         }
 
@@ -221,6 +247,33 @@ namespace HarithmaSalesAppv2
                 cr.PrintToPrinter(1, false, 0, 0);
                 perform.submitInvoice(invoiceModel);
             }
+
+            ClearAll();
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
+        private void txtRecievedAmount_Enter(object sender, EventArgs e)
+        {
+            txtRecievedAmount.Text = "";
+        }
+
+        private void txtRemarks_Enter(object sender, EventArgs e)
+        {
+            txtRemarks.Text = "";
+        }
+
+        private void nupQuantity_Enter(object sender, EventArgs e)
+        {
+            nupQuantity.Select(0, nupQuantity.Value.ToString().Length);
+        }
+
+        private void nupQuantity_MouseUp(object sender, MouseEventArgs e)
+        {
+            nupQuantity.Select(0, nupQuantity.Value.ToString().Length);
         }
     }
 }

@@ -53,6 +53,7 @@ namespace HarithmaSalesAppv2
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.lblBalance = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -76,7 +77,6 @@ namespace HarithmaSalesAppv2
             this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel2 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
             this.btnAdd = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.lblDescription = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -102,15 +102,16 @@ namespace HarithmaSalesAppv2
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.drpPaymentMethod = new Bunifu.Framework.UI.BunifuDropdown();
+            this.txtRemarks = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.btnRecievedAmount = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtRecievedAmount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.btnView = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSubmitInvoice = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.txtRecievedAmount = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
             this.bunifuGradientPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).BeginInit();
             this.bunifuGradientPanel3.SuspendLayout();
@@ -123,7 +124,8 @@ namespace HarithmaSalesAppv2
             // 
             // bunifuGradientPanel1
             // 
-            this.bunifuGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuGradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.Controls.Add(this.lblBalance);
@@ -140,10 +142,10 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.White;
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(1266, 639);
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(639, 639);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(576, 210);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(611, 210);
             this.bunifuGradientPanel1.TabIndex = 17;
             // 
             // lblBalance
@@ -153,11 +155,11 @@ namespace HarithmaSalesAppv2
             this.lblBalance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblBalance.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblBalance.Location = new System.Drawing.Point(314, 167);
+            this.lblBalance.Location = new System.Drawing.Point(349, 167);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(236, 25);
             this.lblBalance.TabIndex = 16;
-            this.lblBalance.Text = "150.00";
+            this.lblBalance.Text = "0";
             this.lblBalance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // bunifuCustomLabel6
@@ -205,7 +207,7 @@ namespace HarithmaSalesAppv2
             this.lblDiscount.BackColor = System.Drawing.Color.White;
             this.lblDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDiscount.Location = new System.Drawing.Point(314, 49);
+            this.lblDiscount.Location = new System.Drawing.Point(349, 49);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(236, 25);
             this.lblDiscount.TabIndex = 14;
@@ -218,7 +220,7 @@ namespace HarithmaSalesAppv2
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTotal.Location = new System.Drawing.Point(309, 13);
+            this.lblTotal.Location = new System.Drawing.Point(344, 13);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(241, 25);
             this.lblTotal.TabIndex = 8;
@@ -259,7 +261,7 @@ namespace HarithmaSalesAppv2
             this.lblGrandTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrandTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(85)))));
             this.lblGrandTotal.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblGrandTotal.Location = new System.Drawing.Point(288, 85);
+            this.lblGrandTotal.Location = new System.Drawing.Point(323, 85);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(262, 37);
             this.lblGrandTotal.TabIndex = 12;
@@ -273,11 +275,11 @@ namespace HarithmaSalesAppv2
             this.lblRecieved.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRecieved.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblRecieved.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblRecieved.Location = new System.Drawing.Point(314, 133);
+            this.lblRecieved.Location = new System.Drawing.Point(349, 133);
             this.lblRecieved.Name = "lblRecieved";
             this.lblRecieved.Size = new System.Drawing.Size(236, 25);
             this.lblRecieved.TabIndex = 10;
-            this.lblRecieved.Text = "150.00";
+            this.lblRecieved.Text = "0";
             this.lblRecieved.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCode
@@ -300,7 +302,7 @@ namespace HarithmaSalesAppv2
             this.txtCode.MaxLength = 32767;
             this.txtCode.Name = "txtCode";
             this.txtCode.Size = new System.Drawing.Size(201, 33);
-            this.txtCode.TabIndex = 21;
+            this.txtCode.TabIndex = 1;
             this.txtCode.Text = "Code";
             this.txtCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtCode.OnValueChanged += new System.EventHandler(this.txtCode_OnValueChanged);
@@ -327,7 +329,7 @@ namespace HarithmaSalesAppv2
             this.txtName.MaxLength = 32767;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(201, 33);
-            this.txtName.TabIndex = 22;
+            this.txtName.TabIndex = 2;
             this.txtName.Text = "Name";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtName.OnValueChanged += new System.EventHandler(this.txtName_OnValueChanged);
@@ -340,8 +342,6 @@ namespace HarithmaSalesAppv2
             this.dgvItem.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvItem.BackgroundColor = System.Drawing.Color.White;
             this.dgvItem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItem.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
@@ -396,8 +396,8 @@ namespace HarithmaSalesAppv2
             this.dgvItem.RowTemplate.Height = 40;
             this.dgvItem.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItem.Size = new System.Drawing.Size(613, 278);
-            this.dgvItem.TabIndex = 23;
+            this.dgvItem.Size = new System.Drawing.Size(611, 278);
+            this.dgvItem.TabIndex = 3;
             this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
             this.dgvItem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvItem_KeyDown);
             // 
@@ -458,7 +458,6 @@ namespace HarithmaSalesAppv2
             // 
             this.bunifuGradientPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel2.BackgroundImage")));
             this.bunifuGradientPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel2.Controls.Add(this.bunifuPictureBox1);
             this.bunifuGradientPanel2.Controls.Add(this.btnAdd);
             this.bunifuGradientPanel2.Controls.Add(this.lblDescription);
             this.bunifuGradientPanel2.Controls.Add(this.bunifuCustomLabel5);
@@ -476,25 +475,8 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel2.Location = new System.Drawing.Point(15, 340);
             this.bunifuGradientPanel2.Name = "bunifuGradientPanel2";
             this.bunifuGradientPanel2.Quality = 10;
-            this.bunifuGradientPanel2.Size = new System.Drawing.Size(611, 202);
-            this.bunifuGradientPanel2.TabIndex = 25;
-            // 
-            // bunifuPictureBox1
-            // 
-            this.bunifuPictureBox1.AllowFocused = false;
-            this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bunifuPictureBox1.BackColor = System.Drawing.Color.White;
-            this.bunifuPictureBox1.BorderRadius = 0;
-            this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
-            this.bunifuPictureBox1.IsCircle = false;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(22, 43);
-            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(96, 96);
-            this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuPictureBox1.TabIndex = 27;
-            this.bunifuPictureBox1.TabStop = false;
-            this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Custom;
+            this.bunifuGradientPanel2.Size = new System.Drawing.Size(609, 202);
+            this.bunifuGradientPanel2.TabIndex = 4;
             // 
             // btnAdd
             // 
@@ -523,8 +505,8 @@ namespace HarithmaSalesAppv2
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 25.75F);
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnAdd.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.IconMarginLeft = 11;
-            this.btnAdd.IconPadding = 65;
+            this.btnAdd.IconMarginLeft = 10;
+            this.btnAdd.IconPadding = 20;
             this.btnAdd.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.IdleBorderColor = System.Drawing.Color.White;
             this.btnAdd.IdleBorderRadius = 7;
@@ -533,7 +515,7 @@ namespace HarithmaSalesAppv2
             this.btnAdd.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.IdleIconLeftImage")));
             this.btnAdd.IdleIconRightImage = null;
             this.btnAdd.IndicateFocus = false;
-            this.btnAdd.Location = new System.Drawing.Point(540, 18);
+            this.btnAdd.Location = new System.Drawing.Point(540, 66);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnAdd.onHoverState.BorderRadius = 7;
@@ -559,8 +541,8 @@ namespace HarithmaSalesAppv2
             this.btnAdd.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnAdd.OnPressedState.IconLeftImage = null;
             this.btnAdd.OnPressedState.IconRightImage = null;
-            this.btnAdd.Size = new System.Drawing.Size(51, 165);
-            this.btnAdd.TabIndex = 37;
+            this.btnAdd.Size = new System.Drawing.Size(51, 74);
+            this.btnAdd.TabIndex = 8;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.TextMarginLeft = 0;
             this.btnAdd.UseDefaultRadiusAndThickness = true;
@@ -571,7 +553,7 @@ namespace HarithmaSalesAppv2
             this.lblDescription.BackColor = System.Drawing.Color.White;
             this.lblDescription.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblDescription.Location = new System.Drawing.Point(209, 151);
+            this.lblDescription.Location = new System.Drawing.Point(107, 153);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(228, 25);
             this.lblDescription.TabIndex = 36;
@@ -584,7 +566,7 @@ namespace HarithmaSalesAppv2
             this.bunifuCustomLabel5.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(138, 151);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(36, 153);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(52, 25);
             this.bunifuCustomLabel5.TabIndex = 35;
@@ -598,7 +580,7 @@ namespace HarithmaSalesAppv2
             this.nupQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nupQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
             this.nupQuantity.InterceptArrowKeys = false;
-            this.nupQuantity.Location = new System.Drawing.Point(438, 75);
+            this.nupQuantity.Location = new System.Drawing.Point(432, 75);
             this.nupQuantity.Maximum = new decimal(new int[] {
             999,
             0,
@@ -606,14 +588,16 @@ namespace HarithmaSalesAppv2
             0});
             this.nupQuantity.Name = "nupQuantity";
             this.nupQuantity.Size = new System.Drawing.Size(78, 53);
-            this.nupQuantity.TabIndex = 34;
+            this.nupQuantity.TabIndex = 5;
             this.nupQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nupQuantity.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
+            this.nupQuantity.Enter += new System.EventHandler(this.nupQuantity_Enter);
             this.nupQuantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nupQuantity_KeyDown);
+            this.nupQuantity.MouseUp += new System.Windows.Forms.MouseEventHandler(this.nupQuantity_MouseUp);
             // 
             // lblName
             // 
@@ -621,7 +605,7 @@ namespace HarithmaSalesAppv2
             this.lblName.BackColor = System.Drawing.Color.White;
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblName.Location = new System.Drawing.Point(209, 64);
+            this.lblName.Location = new System.Drawing.Point(107, 66);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(28, 25);
             this.lblName.TabIndex = 33;
@@ -634,7 +618,7 @@ namespace HarithmaSalesAppv2
             this.bunifuCustomLabel7.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(138, 64);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(36, 66);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(62, 25);
             this.bunifuCustomLabel7.TabIndex = 32;
@@ -647,7 +631,7 @@ namespace HarithmaSalesAppv2
             this.lblPrice.BackColor = System.Drawing.Color.White;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(85)))));
-            this.lblPrice.Location = new System.Drawing.Point(209, 110);
+            this.lblPrice.Location = new System.Drawing.Point(107, 112);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(28, 25);
             this.lblPrice.TabIndex = 31;
@@ -660,7 +644,7 @@ namespace HarithmaSalesAppv2
             this.bunifuCustomLabel13.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(138, 110);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(36, 112);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
             this.bunifuCustomLabel13.Size = new System.Drawing.Size(54, 25);
             this.bunifuCustomLabel13.TabIndex = 30;
@@ -673,10 +657,10 @@ namespace HarithmaSalesAppv2
             this.lblCode.BackColor = System.Drawing.Color.White;
             this.lblCode.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCode.Location = new System.Drawing.Point(209, 24);
+            this.lblCode.Location = new System.Drawing.Point(107, 26);
             this.lblCode.Name = "lblCode";
             this.lblCode.Size = new System.Drawing.Size(28, 25);
-            this.lblCode.TabIndex = 25;
+            this.lblCode.TabIndex = 9;
             this.lblCode.Text = "__";
             this.lblCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -686,7 +670,7 @@ namespace HarithmaSalesAppv2
             this.bunifuCustomLabel2.BackColor = System.Drawing.Color.White;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(138, 24);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(36, 26);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(56, 25);
             this.bunifuCustomLabel2.TabIndex = 24;
@@ -697,7 +681,8 @@ namespace HarithmaSalesAppv2
             // 
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             this.dgvInvoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvInvoice.BackgroundColor = System.Drawing.Color.White;
             this.dgvInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -726,7 +711,7 @@ namespace HarithmaSalesAppv2
             this.dgvInvoice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvInvoice.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.dgvInvoice.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvInvoice.Location = new System.Drawing.Point(1266, 12);
+            this.dgvInvoice.Location = new System.Drawing.Point(637, 12);
             this.dgvInvoice.Name = "dgvInvoice";
             this.dgvInvoice.ReadOnly = true;
             this.dgvInvoice.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -739,7 +724,7 @@ namespace HarithmaSalesAppv2
             this.dgvInvoice.RowTemplate.Height = 60;
             this.dgvInvoice.RowTemplate.ReadOnly = true;
             this.dgvInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvoice.Size = new System.Drawing.Size(576, 621);
+            this.dgvInvoice.Size = new System.Drawing.Size(613, 621);
             this.dgvInvoice.TabIndex = 26;
             this.dgvInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInvoice_CellContentClick);
             // 
@@ -889,9 +874,10 @@ namespace HarithmaSalesAppv2
             // 
             this.bunifuGradientPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel3.BackgroundImage")));
             this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel3.Controls.Add(this.drpPaymentMethod);
+            this.bunifuGradientPanel3.Controls.Add(this.txtRemarks);
             this.bunifuGradientPanel3.Controls.Add(this.btnRecievedAmount);
             this.bunifuGradientPanel3.Controls.Add(this.txtRecievedAmount);
-            this.bunifuGradientPanel3.Controls.Add(this.bunifuCustomLabel3);
             this.bunifuGradientPanel3.GradientBottomLeft = System.Drawing.Color.White;
             this.bunifuGradientPanel3.GradientBottomRight = System.Drawing.Color.White;
             this.bunifuGradientPanel3.GradientTopLeft = System.Drawing.Color.White;
@@ -899,8 +885,53 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel3.Location = new System.Drawing.Point(15, 548);
             this.bunifuGradientPanel3.Name = "bunifuGradientPanel3";
             this.bunifuGradientPanel3.Quality = 10;
-            this.bunifuGradientPanel3.Size = new System.Drawing.Size(611, 129);
-            this.bunifuGradientPanel3.TabIndex = 27;
+            this.bunifuGradientPanel3.Size = new System.Drawing.Size(609, 222);
+            this.bunifuGradientPanel3.TabIndex = 8;
+            // 
+            // drpPaymentMethod
+            // 
+            this.drpPaymentMethod.BackColor = System.Drawing.Color.Transparent;
+            this.drpPaymentMethod.BorderRadius = 3;
+            this.drpPaymentMethod.DisabledColor = System.Drawing.Color.Gray;
+            this.drpPaymentMethod.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drpPaymentMethod.ForeColor = System.Drawing.Color.White;
+            this.drpPaymentMethod.items = new string[] {
+        "Cash",
+        "Card",
+        "Credit"};
+            this.drpPaymentMethod.Location = new System.Drawing.Point(334, 55);
+            this.drpPaymentMethod.Name = "drpPaymentMethod";
+            this.drpPaymentMethod.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.drpPaymentMethod.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.drpPaymentMethod.selectedIndex = 0;
+            this.drpPaymentMethod.Size = new System.Drawing.Size(150, 40);
+            this.drpPaymentMethod.TabIndex = 1;
+            // 
+            // txtRemarks
+            // 
+            this.txtRemarks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtRemarks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtRemarks.BackColor = System.Drawing.Color.White;
+            this.txtRemarks.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtRemarks.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRemarks.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRemarks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtRemarks.HintForeColor = System.Drawing.Color.Empty;
+            this.txtRemarks.HintText = "";
+            this.txtRemarks.isPassword = false;
+            this.txtRemarks.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.txtRemarks.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.txtRemarks.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.txtRemarks.LineThickness = 3;
+            this.txtRemarks.Location = new System.Drawing.Point(41, 140);
+            this.txtRemarks.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRemarks.MaxLength = 32767;
+            this.txtRemarks.Name = "txtRemarks";
+            this.txtRemarks.Size = new System.Drawing.Size(443, 33);
+            this.txtRemarks.TabIndex = 2;
+            this.txtRemarks.Text = "Remarks";
+            this.txtRemarks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRemarks.Enter += new System.EventHandler(this.txtRemarks_Enter);
             // 
             // btnRecievedAmount
             // 
@@ -930,7 +961,7 @@ namespace HarithmaSalesAppv2
             this.btnRecievedAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnRecievedAmount.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecievedAmount.IconMarginLeft = 10;
-            this.btnRecievedAmount.IconPadding = 30;
+            this.btnRecievedAmount.IconPadding = 20;
             this.btnRecievedAmount.IconRightCursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecievedAmount.IdleBorderColor = System.Drawing.Color.White;
             this.btnRecievedAmount.IdleBorderRadius = 7;
@@ -939,7 +970,7 @@ namespace HarithmaSalesAppv2
             this.btnRecievedAmount.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnRecievedAmount.IdleIconLeftImage")));
             this.btnRecievedAmount.IdleIconRightImage = null;
             this.btnRecievedAmount.IndicateFocus = false;
-            this.btnRecievedAmount.Location = new System.Drawing.Point(540, 16);
+            this.btnRecievedAmount.Location = new System.Drawing.Point(540, 70);
             this.btnRecievedAmount.Name = "btnRecievedAmount";
             this.btnRecievedAmount.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnRecievedAmount.onHoverState.BorderRadius = 7;
@@ -965,54 +996,18 @@ namespace HarithmaSalesAppv2
             this.btnRecievedAmount.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnRecievedAmount.OnPressedState.IconLeftImage = null;
             this.btnRecievedAmount.OnPressedState.IconRightImage = null;
-            this.btnRecievedAmount.Size = new System.Drawing.Size(51, 97);
-            this.btnRecievedAmount.TabIndex = 38;
+            this.btnRecievedAmount.Size = new System.Drawing.Size(51, 74);
+            this.btnRecievedAmount.TabIndex = 3;
             this.btnRecievedAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnRecievedAmount.TextMarginLeft = 0;
             this.btnRecievedAmount.UseDefaultRadiusAndThickness = true;
             this.btnRecievedAmount.Click += new System.EventHandler(this.btnRecievedAmount_Click);
             // 
-            // txtRecievedAmount
-            // 
-            this.txtRecievedAmount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtRecievedAmount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtRecievedAmount.BackColor = System.Drawing.Color.White;
-            this.txtRecievedAmount.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtRecievedAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRecievedAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRecievedAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(85)))));
-            this.txtRecievedAmount.HintForeColor = System.Drawing.Color.Empty;
-            this.txtRecievedAmount.HintText = "";
-            this.txtRecievedAmount.isPassword = false;
-            this.txtRecievedAmount.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
-            this.txtRecievedAmount.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.txtRecievedAmount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
-            this.txtRecievedAmount.LineThickness = 7;
-            this.txtRecievedAmount.Location = new System.Drawing.Point(214, 44);
-            this.txtRecievedAmount.Margin = new System.Windows.Forms.Padding(5);
-            this.txtRecievedAmount.MaxLength = 32767;
-            this.txtRecievedAmount.Name = "txtRecievedAmount";
-            this.txtRecievedAmount.Size = new System.Drawing.Size(251, 41);
-            this.txtRecievedAmount.TabIndex = 39;
-            this.txtRecievedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtRecievedAmount.Leave += new System.EventHandler(this.txtRecievedAmount_Leave);
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(17, 50);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(158, 25);
-            this.bunifuCustomLabel3.TabIndex = 38;
-            this.bunifuCustomLabel3.Text = "Recieved Amount";
-            this.bunifuCustomLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnView
             // 
             this.btnView.AllowToggling = false;
+            this.btnView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnView.AnimationSpeed = 200;
             this.btnView.AutoGenerateColors = false;
             this.btnView.BackColor = System.Drawing.Color.Transparent;
@@ -1044,10 +1039,10 @@ namespace HarithmaSalesAppv2
             this.btnView.IdleBorderRadius = 7;
             this.btnView.IdleBorderThickness = 2;
             this.btnView.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
-            this.btnView.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnView.IdleIconLeftImage")));
+            this.btnView.IdleIconLeftImage = null;
             this.btnView.IdleIconRightImage = null;
             this.btnView.IndicateFocus = false;
-            this.btnView.Location = new System.Drawing.Point(8, 776);
+            this.btnView.Location = new System.Drawing.Point(178, 776);
             this.btnView.Name = "btnView";
             this.btnView.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnView.onHoverState.BorderRadius = 7;
@@ -1063,7 +1058,7 @@ namespace HarithmaSalesAppv2
             this.btnView.OnIdleState.BorderThickness = 2;
             this.btnView.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnView.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.btnView.OnIdleState.IconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnView.OnIdleState.IconLeftImage")));
+            this.btnView.OnIdleState.IconLeftImage = null;
             this.btnView.OnIdleState.IconRightImage = null;
             this.btnView.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnView.OnPressedState.BorderRadius = 7;
@@ -1073,8 +1068,8 @@ namespace HarithmaSalesAppv2
             this.btnView.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnView.OnPressedState.IconLeftImage = null;
             this.btnView.OnPressedState.IconRightImage = null;
-            this.btnView.Size = new System.Drawing.Size(201, 73);
-            this.btnView.TabIndex = 40;
+            this.btnView.Size = new System.Drawing.Size(165, 73);
+            this.btnView.TabIndex = 9;
             this.btnView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnView.TextMarginLeft = 0;
             this.btnView.UseDefaultRadiusAndThickness = true;
@@ -1083,13 +1078,15 @@ namespace HarithmaSalesAppv2
             // btnSubmitInvoice
             // 
             this.btnSubmitInvoice.AllowToggling = false;
+            this.btnSubmitInvoice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSubmitInvoice.AnimationSpeed = 200;
             this.btnSubmitInvoice.AutoGenerateColors = false;
             this.btnSubmitInvoice.BackColor = System.Drawing.Color.Transparent;
             this.btnSubmitInvoice.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
             this.btnSubmitInvoice.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSubmitInvoice.BackgroundImage")));
             this.btnSubmitInvoice.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSubmitInvoice.ButtonText = "Invoice Submit";
+            this.btnSubmitInvoice.ButtonText = "Submit";
             this.btnSubmitInvoice.ButtonTextMarginLeft = 0;
             this.btnSubmitInvoice.ColorContrastOnClick = 45;
             this.btnSubmitInvoice.ColorContrastOnHover = 45;
@@ -1117,7 +1114,7 @@ namespace HarithmaSalesAppv2
             this.btnSubmitInvoice.IdleIconLeftImage = null;
             this.btnSubmitInvoice.IdleIconRightImage = null;
             this.btnSubmitInvoice.IndicateFocus = false;
-            this.btnSubmitInvoice.Location = new System.Drawing.Point(314, 776);
+            this.btnSubmitInvoice.Location = new System.Drawing.Point(349, 776);
             this.btnSubmitInvoice.Name = "btnSubmitInvoice";
             this.btnSubmitInvoice.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnSubmitInvoice.onHoverState.BorderRadius = 7;
@@ -1143,19 +1140,118 @@ namespace HarithmaSalesAppv2
             this.btnSubmitInvoice.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.btnSubmitInvoice.OnPressedState.IconLeftImage = null;
             this.btnSubmitInvoice.OnPressedState.IconRightImage = null;
-            this.btnSubmitInvoice.Size = new System.Drawing.Size(312, 73);
-            this.btnSubmitInvoice.TabIndex = 41;
+            this.btnSubmitInvoice.Size = new System.Drawing.Size(277, 73);
+            this.btnSubmitInvoice.TabIndex = 9;
             this.btnSubmitInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSubmitInvoice.TextMarginLeft = 0;
             this.btnSubmitInvoice.UseDefaultRadiusAndThickness = true;
             this.btnSubmitInvoice.Click += new System.EventHandler(this.btnSubmitInvoice_Click);
+            // 
+            // bunifuButton1
+            // 
+            this.bunifuButton1.AllowToggling = false;
+            this.bunifuButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bunifuButton1.AnimationSpeed = 200;
+            this.bunifuButton1.AutoGenerateColors = false;
+            this.bunifuButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuButton1.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.bunifuButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.BackgroundImage")));
+            this.bunifuButton1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.ButtonText = "Clear";
+            this.bunifuButton1.ButtonTextMarginLeft = 0;
+            this.bunifuButton1.ColorContrastOnClick = 45;
+            this.bunifuButton1.ColorContrastOnHover = 45;
+            this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges5;
+            this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.bunifuButton1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.bunifuButton1.Font = new System.Drawing.Font("Segoe UI Semibold", 25.75F);
+            this.bunifuButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuButton1.IconMarginLeft = 10;
+            this.bunifuButton1.IconPadding = 20;
+            this.bunifuButton1.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuButton1.IdleBorderColor = System.Drawing.Color.White;
+            this.bunifuButton1.IdleBorderRadius = 7;
+            this.bunifuButton1.IdleBorderThickness = 2;
+            this.bunifuButton1.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.bunifuButton1.IdleIconLeftImage = null;
+            this.bunifuButton1.IdleIconRightImage = null;
+            this.bunifuButton1.IndicateFocus = false;
+            this.bunifuButton1.Location = new System.Drawing.Point(15, 776);
+            this.bunifuButton1.Name = "bunifuButton1";
+            this.bunifuButton1.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.onHoverState.BorderRadius = 7;
+            this.bunifuButton1.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.onHoverState.BorderThickness = 2;
+            this.bunifuButton1.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.onHoverState.IconLeftImage = null;
+            this.bunifuButton1.onHoverState.IconRightImage = null;
+            this.bunifuButton1.OnIdleState.BorderColor = System.Drawing.Color.White;
+            this.bunifuButton1.OnIdleState.BorderRadius = 7;
+            this.bunifuButton1.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.OnIdleState.BorderThickness = 2;
+            this.bunifuButton1.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(247)))), ((int)(((byte)(253)))));
+            this.bunifuButton1.OnIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.OnIdleState.IconLeftImage = null;
+            this.bunifuButton1.OnIdleState.IconRightImage = null;
+            this.bunifuButton1.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.OnPressedState.BorderRadius = 7;
+            this.bunifuButton1.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.bunifuButton1.OnPressedState.BorderThickness = 2;
+            this.bunifuButton1.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.bunifuButton1.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.bunifuButton1.OnPressedState.IconLeftImage = null;
+            this.bunifuButton1.OnPressedState.IconRightImage = null;
+            this.bunifuButton1.Size = new System.Drawing.Size(157, 73);
+            this.bunifuButton1.TabIndex = 9;
+            this.bunifuButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuButton1.TextMarginLeft = 0;
+            this.bunifuButton1.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton1.Click += new System.EventHandler(this.bunifuButton1_Click);
+            // 
+            // txtRecievedAmount
+            // 
+            this.txtRecievedAmount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtRecievedAmount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtRecievedAmount.BackColor = System.Drawing.Color.White;
+            this.txtRecievedAmount.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtRecievedAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRecievedAmount.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRecievedAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(148)))), ((int)(((byte)(85)))));
+            this.txtRecievedAmount.HintForeColor = System.Drawing.Color.Empty;
+            this.txtRecievedAmount.HintText = "";
+            this.txtRecievedAmount.isPassword = false;
+            this.txtRecievedAmount.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.txtRecievedAmount.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.txtRecievedAmount.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.txtRecievedAmount.LineThickness = 3;
+            this.txtRecievedAmount.Location = new System.Drawing.Point(41, 55);
+            this.txtRecievedAmount.Margin = new System.Windows.Forms.Padding(5);
+            this.txtRecievedAmount.MaxLength = 32767;
+            this.txtRecievedAmount.Name = "txtRecievedAmount";
+            this.txtRecievedAmount.Size = new System.Drawing.Size(251, 40);
+            this.txtRecievedAmount.TabIndex = 0;
+            this.txtRecievedAmount.Text = "Recieved Amount";
+            this.txtRecievedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtRecievedAmount.Enter += new System.EventHandler(this.txtRecievedAmount_Enter);
+            this.txtRecievedAmount.Leave += new System.EventHandler(this.txtRecievedAmount_Leave);
             // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1854, 861);
+            this.ClientSize = new System.Drawing.Size(1262, 861);
+            this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.btnSubmitInvoice);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.bunifuGradientPanel3);
@@ -1176,11 +1272,9 @@ namespace HarithmaSalesAppv2
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).EndInit();
             this.bunifuGradientPanel2.ResumeLayout(false);
             this.bunifuGradientPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).EndInit();
             this.bunifuGradientPanel3.ResumeLayout(false);
-            this.bunifuGradientPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1232,13 +1326,14 @@ namespace HarithmaSalesAppv2
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
-        private Bunifu.UI.WinForms.BunifuPictureBox bunifuPictureBox1;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnRecievedAmount;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRecievedAmount;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnView;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSubmitInvoice;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRemarks;
+        private Bunifu.Framework.UI.BunifuDropdown drpPaymentMethod;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txtRecievedAmount;
     }
 }
