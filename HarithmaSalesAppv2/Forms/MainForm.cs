@@ -18,35 +18,43 @@ namespace HarithmaSalesAppv2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private Form ActiveForm = null;
+        private void openForm(Form childForm)
         {
-            ItemMenu f1 = new ItemMenu();
-            f1.Show();
+            if (ActiveForm != null)
+                ActiveForm.Close();
+            ActiveForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnItem_Click(object sender, EventArgs e)
+        {
+            openForm(new ItemMenu());
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            InventoryForm f2 = new InventoryForm();
-            f2.Show();
-        }
-
-        private void btnSettings_Click(object sender, EventArgs e)
-        {
-            SettingsForm f3 = new SettingsForm();
-            f3.Show();
+            openForm(new InventoryForm());
         }
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
-            DiscountForm f4 = new DiscountForm();
-            f4.Show();
+            openForm(new DiscountForm());
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
-            InvoiceForm f5 = new InvoiceForm();
-            f5.Show();
+            openForm(new InvoiceForm());
         }
 
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            openForm(new SettingsForm());
+        }
     }
 }
