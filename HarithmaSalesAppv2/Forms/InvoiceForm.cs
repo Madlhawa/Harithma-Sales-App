@@ -79,7 +79,7 @@ namespace HarithmaSalesAppv2
             itemModel = new Item();
             invoiceItemModel = new InvoiceItem();
             invoiceModel = new Classes.CurrentInvoice();
-            lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "_";
+            lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "";
             lblTotal.Text = lblRecieved.Text = lblGrandTotal.Text = lblDiscount.Text = lblBalance.Text = "_";
             txtRecievedAmount.Text = "Received Amount";
             txtRemarks.Text = "Remarks";
@@ -109,6 +109,8 @@ namespace HarithmaSalesAppv2
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             ClearAll();
+            dgvItem.AutoGenerateColumns = false;
+            dgvItem.DataSource = perform.ItemList(0, "");
         }
 
         private void txtCode_OnValueChanged(object sender, EventArgs e)

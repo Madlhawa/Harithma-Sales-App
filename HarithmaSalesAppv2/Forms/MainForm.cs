@@ -18,12 +18,12 @@ namespace HarithmaSalesAppv2
             InitializeComponent();
         }
 
-        private Form ActiveForm = null;
+        private Form activeForm = null;
         private void openForm(Form childForm)
         {
-            if (ActiveForm != null)
-                ActiveForm.Close();
-            ActiveForm = childForm;
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -55,6 +55,16 @@ namespace HarithmaSalesAppv2
         private void btnSettings_Click(object sender, EventArgs e)
         {
             openForm(new SettingsForm());
+        }
+
+        private void btnUI_Click(object sender, EventArgs e)
+        {
+            openForm(new Forms.UIElementsForm());
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
+            openForm(new Forms.UIElementsForm());
         }
     }
 }

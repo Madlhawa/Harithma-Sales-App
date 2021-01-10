@@ -40,6 +40,7 @@ namespace HarithmaSalesAppv2
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.btnUI = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSideMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,6 +48,7 @@ namespace HarithmaSalesAppv2
             // panelSideMenu
             // 
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(47)))), ((int)(((byte)(156)))));
+            this.panelSideMenu.Controls.Add(this.btnUI);
             this.panelSideMenu.Controls.Add(this.btnSettings);
             this.panelSideMenu.Controls.Add(this.btnInvoice);
             this.panelSideMenu.Controls.Add(this.btnDiscount);
@@ -62,7 +64,7 @@ namespace HarithmaSalesAppv2
             // btnSettings
             // 
             this.btnSettings.Active = false;
-            this.btnSettings.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnSettings.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSettings.BorderRadius = 0;
@@ -82,13 +84,13 @@ namespace HarithmaSalesAppv2
             this.btnSettings.IconVisible = true;
             this.btnSettings.IconZoom = 90D;
             this.btnSettings.IsTab = false;
-            this.btnSettings.Location = new System.Drawing.Point(0, 845);
+            this.btnSettings.Location = new System.Drawing.Point(0, 823);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnSettings.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSettings.selected = false;
-            this.btnSettings.Size = new System.Drawing.Size(250, 48);
+            this.btnSettings.Size = new System.Drawing.Size(250, 70);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -99,7 +101,7 @@ namespace HarithmaSalesAppv2
             // btnInvoice
             // 
             this.btnInvoice.Active = false;
-            this.btnInvoice.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnInvoice.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
             this.btnInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInvoice.BorderRadius = 0;
@@ -119,13 +121,13 @@ namespace HarithmaSalesAppv2
             this.btnInvoice.IconVisible = true;
             this.btnInvoice.IconZoom = 90D;
             this.btnInvoice.IsTab = false;
-            this.btnInvoice.Location = new System.Drawing.Point(0, 234);
+            this.btnInvoice.Location = new System.Drawing.Point(0, 300);
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnInvoice.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnInvoice.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInvoice.selected = false;
-            this.btnInvoice.Size = new System.Drawing.Size(250, 48);
+            this.btnInvoice.Size = new System.Drawing.Size(250, 70);
             this.btnInvoice.TabIndex = 4;
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,7 +138,7 @@ namespace HarithmaSalesAppv2
             // btnDiscount
             // 
             this.btnDiscount.Active = false;
-            this.btnDiscount.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnDiscount.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
             this.btnDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnDiscount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDiscount.BorderRadius = 0;
@@ -156,13 +158,13 @@ namespace HarithmaSalesAppv2
             this.btnDiscount.IconVisible = true;
             this.btnDiscount.IconZoom = 90D;
             this.btnDiscount.IsTab = false;
-            this.btnDiscount.Location = new System.Drawing.Point(0, 186);
+            this.btnDiscount.Location = new System.Drawing.Point(0, 230);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnDiscount.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnDiscount.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDiscount.selected = false;
-            this.btnDiscount.Size = new System.Drawing.Size(250, 48);
+            this.btnDiscount.Size = new System.Drawing.Size(250, 70);
             this.btnDiscount.TabIndex = 3;
             this.btnDiscount.Text = "Discount";
             this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -173,7 +175,7 @@ namespace HarithmaSalesAppv2
             // btnInventory
             // 
             this.btnInventory.Active = false;
-            this.btnInventory.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnInventory.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
             this.btnInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnInventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnInventory.BorderRadius = 0;
@@ -193,13 +195,13 @@ namespace HarithmaSalesAppv2
             this.btnInventory.IconVisible = true;
             this.btnInventory.IconZoom = 90D;
             this.btnInventory.IsTab = false;
-            this.btnInventory.Location = new System.Drawing.Point(0, 138);
+            this.btnInventory.Location = new System.Drawing.Point(0, 160);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnInventory.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnInventory.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInventory.selected = false;
-            this.btnInventory.Size = new System.Drawing.Size(250, 48);
+            this.btnInventory.Size = new System.Drawing.Size(250, 70);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +212,7 @@ namespace HarithmaSalesAppv2
             // btnItem
             // 
             this.btnItem.Active = false;
-            this.btnItem.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnItem.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
             this.btnItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnItem.BorderRadius = 0;
@@ -236,7 +238,7 @@ namespace HarithmaSalesAppv2
             this.btnItem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnItem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnItem.selected = false;
-            this.btnItem.Size = new System.Drawing.Size(250, 48);
+            this.btnItem.Size = new System.Drawing.Size(250, 70);
             this.btnItem.TabIndex = 1;
             this.btnItem.Text = "Item";
             this.btnItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -284,6 +286,43 @@ namespace HarithmaSalesAppv2
             this.panelChildForm.Size = new System.Drawing.Size(1595, 893);
             this.panelChildForm.TabIndex = 6;
             // 
+            // btnUI
+            // 
+            this.btnUI.Active = false;
+            this.btnUI.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
+            this.btnUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.btnUI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUI.BorderRadius = 0;
+            this.btnUI.ButtonText = "UI";
+            this.btnUI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUI.DisabledColor = System.Drawing.Color.Gray;
+            this.btnUI.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnUI.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnUI.Iconimage = null;
+            this.btnUI.Iconimage_right = null;
+            this.btnUI.Iconimage_right_Selected = null;
+            this.btnUI.Iconimage_Selected = null;
+            this.btnUI.IconMarginLeft = 0;
+            this.btnUI.IconMarginRight = 0;
+            this.btnUI.IconRightVisible = true;
+            this.btnUI.IconRightZoom = 0D;
+            this.btnUI.IconVisible = true;
+            this.btnUI.IconZoom = 90D;
+            this.btnUI.IsTab = false;
+            this.btnUI.Location = new System.Drawing.Point(0, 753);
+            this.btnUI.Name = "btnUI";
+            this.btnUI.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.btnUI.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnUI.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnUI.selected = false;
+            this.btnUI.Size = new System.Drawing.Size(250, 70);
+            this.btnUI.TabIndex = 6;
+            this.btnUI.Text = "UI";
+            this.btnUI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUI.Textcolor = System.Drawing.Color.White;
+            this.btnUI.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUI.Click += new System.EventHandler(this.btnUI_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +333,7 @@ namespace HarithmaSalesAppv2
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Main";
             this.Text = "Harithma Sales App";
+            this.Load += new System.EventHandler(this.Main_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -312,6 +352,7 @@ namespace HarithmaSalesAppv2
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelChildForm;
+        private Bunifu.Framework.UI.BunifuFlatButton btnUI;
     }
 }
 
