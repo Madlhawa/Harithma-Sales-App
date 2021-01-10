@@ -102,6 +102,8 @@ namespace HarithmaSalesAppv2
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuGradientPanel3 = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDiscount = new Bunifu.Framework.BunifuCustomTextbox();
             this.paneltxtAmountReceived = new System.Windows.Forms.Panel();
             this.txtRecievedAmount = new Bunifu.Framework.BunifuCustomTextbox();
             this.txtRemarks = new Bunifu.Framework.BunifuCustomTextbox();
@@ -126,6 +128,7 @@ namespace HarithmaSalesAppv2
             ((System.ComponentModel.ISupportInitialize)(this.nupQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).BeginInit();
             this.bunifuGradientPanel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.paneltxtAmountReceived.SuspendLayout();
             this.bunifuGradientPanel4.SuspendLayout();
             this.paneltxtName.SuspendLayout();
@@ -544,10 +547,10 @@ namespace HarithmaSalesAppv2
             // 
             this.nupQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nupQuantity.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.nupQuantity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(233)))), ((int)(((byte)(250)))));
             this.nupQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nupQuantity.Font = new System.Drawing.Font("Segoe UI Semibold", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nupQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(62)))));
+            this.nupQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(89)))), ((int)(((byte)(186)))));
             this.nupQuantity.InterceptArrowKeys = false;
             this.nupQuantity.Location = new System.Drawing.Point(550, 75);
             this.nupQuantity.Maximum = new decimal(new int[] {
@@ -730,7 +733,7 @@ namespace HarithmaSalesAppv2
             // Minus
             // 
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            dataGridViewCellStyle10.NullValue = null;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Gray;
             this.Minus.DefaultCellStyle = dataGridViewCellStyle10;
             this.Minus.FillWeight = 44.67756F;
@@ -756,7 +759,7 @@ namespace HarithmaSalesAppv2
             // plus
             // 
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle12.NullValue")));
+            dataGridViewCellStyle12.NullValue = null;
             this.plus.DefaultCellStyle = dataGridViewCellStyle12;
             this.plus.FillWeight = 44.67756F;
             this.plus.HeaderText = "";
@@ -795,7 +798,7 @@ namespace HarithmaSalesAppv2
             // Delete
             // 
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle15.NullValue")));
+            dataGridViewCellStyle15.NullValue = null;
             dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(5, 0, 6, 0);
             this.Delete.DefaultCellStyle = dataGridViewCellStyle15;
             this.Delete.FillWeight = 44.67756F;
@@ -813,7 +816,7 @@ namespace HarithmaSalesAppv2
             // dataGridViewImageColumn1
             // 
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle18.NullValue")));
+            dataGridViewCellStyle18.NullValue = null;
             dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Gray;
             this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewImageColumn1.FillWeight = 44.67756F;
@@ -825,7 +828,7 @@ namespace HarithmaSalesAppv2
             // dataGridViewImageColumn2
             // 
             dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle19.NullValue")));
+            dataGridViewCellStyle19.NullValue = null;
             this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewImageColumn2.FillWeight = 44.67756F;
             this.dataGridViewImageColumn2.HeaderText = "";
@@ -836,7 +839,7 @@ namespace HarithmaSalesAppv2
             // dataGridViewImageColumn3
             // 
             dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle20.NullValue")));
+            dataGridViewCellStyle20.NullValue = null;
             dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(5, 0, 6, 0);
             this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewImageColumn3.FillWeight = 44.67756F;
@@ -855,6 +858,7 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.bunifuGradientPanel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel3.BackgroundImage")));
             this.bunifuGradientPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel3.Controls.Add(this.panel1);
             this.bunifuGradientPanel3.Controls.Add(this.paneltxtAmountReceived);
             this.bunifuGradientPanel3.Controls.Add(this.txtRemarks);
             this.bunifuGradientPanel3.Controls.Add(this.drpPaymentMethod);
@@ -869,15 +873,41 @@ namespace HarithmaSalesAppv2
             this.bunifuGradientPanel3.Size = new System.Drawing.Size(729, 213);
             this.bunifuGradientPanel3.TabIndex = 8;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.panel1.Controls.Add(this.txtDiscount);
+            this.panel1.Location = new System.Drawing.Point(331, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(154, 46);
+            this.panel1.TabIndex = 32;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(237)))), ((int)(((byte)(226)))));
+            this.txtDiscount.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
+            this.txtDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(132)))), ((int)(((byte)(22)))));
+            this.txtDiscount.Location = new System.Drawing.Point(0, 0);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(154, 37);
+            this.txtDiscount.TabIndex = 30;
+            this.txtDiscount.Text = "Discount";
+            this.txtDiscount.Leave += new System.EventHandler(this.txtDiscount_Leave);
+            // 
             // paneltxtAmountReceived
             // 
             this.paneltxtAmountReceived.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.paneltxtAmountReceived.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(248)))), ((int)(((byte)(241)))));
             this.paneltxtAmountReceived.Controls.Add(this.txtRecievedAmount);
-            this.paneltxtAmountReceived.Location = new System.Drawing.Point(41, 30);
+            this.paneltxtAmountReceived.Location = new System.Drawing.Point(41, 33);
             this.paneltxtAmountReceived.Name = "paneltxtAmountReceived";
-            this.paneltxtAmountReceived.Size = new System.Drawing.Size(390, 42);
+            this.paneltxtAmountReceived.Size = new System.Drawing.Size(264, 46);
             this.paneltxtAmountReceived.TabIndex = 31;
             // 
             // txtRecievedAmount
@@ -891,7 +921,7 @@ namespace HarithmaSalesAppv2
             this.txtRecievedAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(192)))), ((int)(((byte)(132)))));
             this.txtRecievedAmount.Location = new System.Drawing.Point(0, 0);
             this.txtRecievedAmount.Name = "txtRecievedAmount";
-            this.txtRecievedAmount.Size = new System.Drawing.Size(390, 37);
+            this.txtRecievedAmount.Size = new System.Drawing.Size(264, 37);
             this.txtRecievedAmount.TabIndex = 29;
             this.txtRecievedAmount.Text = "Recieved Amount";
             this.txtRecievedAmount.Enter += new System.EventHandler(this.txtRecievedAmount_Enter);
@@ -906,7 +936,7 @@ namespace HarithmaSalesAppv2
             this.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRemarks.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
             this.txtRemarks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(89)))), ((int)(((byte)(186)))));
-            this.txtRemarks.Location = new System.Drawing.Point(41, 104);
+            this.txtRemarks.Location = new System.Drawing.Point(41, 106);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.Size = new System.Drawing.Size(563, 82);
@@ -926,12 +956,12 @@ namespace HarithmaSalesAppv2
         "Cash",
         "Card",
         "Credit"};
-            this.drpPaymentMethod.Location = new System.Drawing.Point(452, 30);
+            this.drpPaymentMethod.Location = new System.Drawing.Point(510, 33);
             this.drpPaymentMethod.Name = "drpPaymentMethod";
             this.drpPaymentMethod.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.drpPaymentMethod.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.drpPaymentMethod.selectedIndex = 0;
-            this.drpPaymentMethod.Size = new System.Drawing.Size(152, 46);
+            this.drpPaymentMethod.Size = new System.Drawing.Size(94, 46);
             this.drpPaymentMethod.TabIndex = 1;
             // 
             // btnRecievedAmount
@@ -1345,6 +1375,8 @@ namespace HarithmaSalesAppv2
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoice)).EndInit();
             this.bunifuGradientPanel3.ResumeLayout(false);
             this.bunifuGradientPanel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.paneltxtAmountReceived.ResumeLayout(false);
             this.paneltxtAmountReceived.PerformLayout();
             this.bunifuGradientPanel4.ResumeLayout(false);
@@ -1421,5 +1453,7 @@ namespace HarithmaSalesAppv2
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemDescription;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse10;
+        private System.Windows.Forms.Panel panel1;
+        private Bunifu.Framework.BunifuCustomTextbox txtDiscount;
     }
 }

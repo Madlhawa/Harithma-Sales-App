@@ -14,6 +14,8 @@ namespace HarithmaSalesAppv2.Classes
         }
 
         public BindingList<InvoiceItem> itemList { get; set; }
+        //public Decimal InvoiceCustomDiscount { get; set; }
+
 
         private void updateInvoice()
         {

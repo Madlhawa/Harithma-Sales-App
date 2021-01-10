@@ -36,6 +36,8 @@
           <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InvoiceDate" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
           <Property Name="InvoiceDiscount" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceManualDiscount" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceTotalDiscount" Type="decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceAmount" Type="decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="InvoiceAmountPayable" Type="decimal" Precision="19" Scale="4" />
           <Property Name="InvoiceAmountRecieved" Type="decimal" Precision="19" Scale="4" />
@@ -182,6 +184,8 @@
           <Property Name="InvoiceRemarks" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Item_Invoice" Relationship="Self.Invoice_ItemInvoice" FromRole="Invoice" ToRole="Item_Invoice" />
           <Property Name="InvoiceAmountPayable" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceManualDiscount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="InvoiceTotalDiscount" Type="Decimal" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -318,6 +322,8 @@
           <EntitySetMapping Name="Invoices">
             <EntityTypeMapping TypeName="HarithmaSalesModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="InvoiceTotalDiscount" ColumnName="InvoiceTotalDiscount" />
+                <ScalarProperty Name="InvoiceManualDiscount" ColumnName="InvoiceManualDiscount" />
                 <ScalarProperty Name="InvoiceAmountPayable" ColumnName="InvoiceAmountPayable" />
                 <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
                 <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />

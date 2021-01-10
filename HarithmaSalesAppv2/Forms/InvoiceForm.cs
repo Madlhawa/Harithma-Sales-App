@@ -106,6 +106,24 @@ namespace HarithmaSalesAppv2
             }
         }
 
+        void setRecievedAmount()
+        {
+            decimal value, discount;
+            if (decimal.TryParse(txtRecievedAmount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out value))
+            {
+                if (value > invoiceModel.InvoiceAmountPayable)
+                {
+                    invoiceModel.setRecievedAmount(value);
+                    invoiceModel.InvoicePaymentMethod = drpPaymentMethod.selectedValue.ToString();
+                    if (txtRemarks.Text != "Remarks")
+                        invoiceModel.InvoiceRemarks = txtRemarks.Text.ToString().Trim();
+                    //if (decimal.TryParse(txtDiscount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out discount))
+                        //invoice
+                    UpdateInvoice();
+                }
+            }
+        }
+
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             ClearAll();
@@ -195,16 +213,7 @@ namespace HarithmaSalesAppv2
 
         private void btnRecievedAmount_Click(object sender, EventArgs e)
         {
-            decimal value;
-            if (decimal.TryParse(txtRecievedAmount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out value))
-                invoiceModel.setRecievedAmount(value);
-
-            if (txtRemarks.Text != "Remarks")
-                invoiceModel.InvoiceRemarks = txtRemarks.Text.ToString().Trim();
-
-            invoiceModel.InvoicePaymentMethod = drpPaymentMethod.selectedValue.ToString();
-
-            UpdateInvoice();
+            setRecievedAmount();
         }
 
         private void txtRecievedAmount_Leave(object sender, EventArgs e)
@@ -276,6 +285,15 @@ namespace HarithmaSalesAppv2
         private void nupQuantity_MouseUp(object sender, MouseEventArgs e)
         {
             nupQuantity.Select(0, nupQuantity.Value.ToString().Length);
+        }
+
+        private void txtDiscount_Leave(object sender, EventArgs e)
+        {
+            Double value;
+            if (Double.TryParse(txtDiscount.Text, out value))
+                txtDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", value);
+            else
+                txtDiscount.Text = String.Empty;
         }
     }
 }
