@@ -160,6 +160,12 @@
       <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Functions.cs" />
+    <Compile Include="Forms\ItemFormNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemFormNew.Designer.cs">
+      <DependentUpon>ItemFormNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\RecieptForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemForm.resx">
       <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemFormNew.resx">
+      <DependentUpon>ItemFormNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
