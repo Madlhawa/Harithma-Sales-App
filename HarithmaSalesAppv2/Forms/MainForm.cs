@@ -59,7 +59,7 @@ namespace HarithmaSalesAppv2
 
         private void btnUI_Click(object sender, EventArgs e)
         {
-            openForm(new Forms.ItemFormNew());
+            openForm(new Forms.ItemForm());
         }
 
         private void Main_Load(object sender, EventArgs e)

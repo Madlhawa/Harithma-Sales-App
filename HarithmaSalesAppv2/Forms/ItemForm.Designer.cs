@@ -85,7 +85,7 @@ namespace HarithmaSalesAppv2
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 212);
+            this.label5.Location = new System.Drawing.Point(15, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 24;
@@ -228,6 +228,7 @@ namespace HarithmaSalesAppv2
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Maroon;
             this.lblStatus.ForeColor = System.Drawing.Color.DarkGreen;
             this.lblStatus.Location = new System.Drawing.Point(15, 258);
             this.lblStatus.Name = "lblStatus";
