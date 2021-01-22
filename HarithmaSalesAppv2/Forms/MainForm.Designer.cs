@@ -31,6 +31,7 @@ namespace HarithmaSalesAppv2
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.btnUI = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnSettings = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnInvoice = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnDiscount = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,7 +41,6 @@ namespace HarithmaSalesAppv2
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnUI = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSideMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -58,8 +58,45 @@ namespace HarithmaSalesAppv2
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 893);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 749);
             this.panelSideMenu.TabIndex = 5;
+            // 
+            // btnUI
+            // 
+            this.btnUI.Active = false;
+            this.btnUI.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
+            this.btnUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.btnUI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUI.BorderRadius = 0;
+            this.btnUI.ButtonText = "UI";
+            this.btnUI.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUI.DisabledColor = System.Drawing.Color.Gray;
+            this.btnUI.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnUI.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnUI.Iconimage = null;
+            this.btnUI.Iconimage_right = null;
+            this.btnUI.Iconimage_right_Selected = null;
+            this.btnUI.Iconimage_Selected = null;
+            this.btnUI.IconMarginLeft = 0;
+            this.btnUI.IconMarginRight = 0;
+            this.btnUI.IconRightVisible = true;
+            this.btnUI.IconRightZoom = 0D;
+            this.btnUI.IconVisible = true;
+            this.btnUI.IconZoom = 90D;
+            this.btnUI.IsTab = false;
+            this.btnUI.Location = new System.Drawing.Point(0, 609);
+            this.btnUI.Name = "btnUI";
+            this.btnUI.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
+            this.btnUI.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
+            this.btnUI.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnUI.selected = false;
+            this.btnUI.Size = new System.Drawing.Size(250, 70);
+            this.btnUI.TabIndex = 6;
+            this.btnUI.Text = "UI";
+            this.btnUI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUI.Textcolor = System.Drawing.Color.White;
+            this.btnUI.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUI.Click += new System.EventHandler(this.btnUI_Click);
             // 
             // btnSettings
             // 
@@ -84,7 +121,7 @@ namespace HarithmaSalesAppv2
             this.btnSettings.IconVisible = true;
             this.btnSettings.IconZoom = 90D;
             this.btnSettings.IsTab = false;
-            this.btnSettings.Location = new System.Drawing.Point(0, 823);
+            this.btnSettings.Location = new System.Drawing.Point(0, 679);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
             this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
@@ -283,51 +320,14 @@ namespace HarithmaSalesAppv2
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1595, 893);
+            this.panelChildForm.Size = new System.Drawing.Size(1120, 749);
             this.panelChildForm.TabIndex = 6;
-            // 
-            // btnUI
-            // 
-            this.btnUI.Active = false;
-            this.btnUI.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(56)))), ((int)(((byte)(160)))));
-            this.btnUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
-            this.btnUI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUI.BorderRadius = 0;
-            this.btnUI.ButtonText = "UI";
-            this.btnUI.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUI.DisabledColor = System.Drawing.Color.Gray;
-            this.btnUI.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnUI.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnUI.Iconimage = null;
-            this.btnUI.Iconimage_right = null;
-            this.btnUI.Iconimage_right_Selected = null;
-            this.btnUI.Iconimage_Selected = null;
-            this.btnUI.IconMarginLeft = 0;
-            this.btnUI.IconMarginRight = 0;
-            this.btnUI.IconRightVisible = true;
-            this.btnUI.IconRightZoom = 0D;
-            this.btnUI.IconVisible = true;
-            this.btnUI.IconZoom = 90D;
-            this.btnUI.IsTab = false;
-            this.btnUI.Location = new System.Drawing.Point(0, 753);
-            this.btnUI.Name = "btnUI";
-            this.btnUI.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(75)))), ((int)(((byte)(169)))));
-            this.btnUI.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.btnUI.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnUI.selected = false;
-            this.btnUI.Size = new System.Drawing.Size(250, 70);
-            this.btnUI.TabIndex = 6;
-            this.btnUI.Text = "UI";
-            this.btnUI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUI.Textcolor = System.Drawing.Color.White;
-            this.btnUI.TextFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUI.Click += new System.EventHandler(this.btnUI_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1845, 893);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

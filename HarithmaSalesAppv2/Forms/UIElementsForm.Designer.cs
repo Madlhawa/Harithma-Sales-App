@@ -156,7 +156,7 @@ namespace HarithmaSalesAppv2.Forms
             this.dgvInvoice.RowTemplate.Height = 60;
             this.dgvInvoice.RowTemplate.ReadOnly = true;
             this.dgvInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInvoice.Size = new System.Drawing.Size(632, 316);
+            this.dgvInvoice.Size = new System.Drawing.Size(288, 230);
             this.dgvInvoice.TabIndex = 27;
             // 
             // InvoiceItemID
@@ -356,7 +356,7 @@ namespace HarithmaSalesAppv2.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1730, 874);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.bunifuCustomDataGrid1);
             this.Controls.Add(this.dgvInvoice);
             this.Controls.Add(this.panel1);
