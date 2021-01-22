@@ -37,10 +37,15 @@ namespace HarithmaSalesAppv2
         void UpdateInvoice()
         {
             lblTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmount);
-            lblDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceDiscount);
+            lblItemDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceDiscount);
+            lblManualDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceManualDiscount);
             lblGrandTotal.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountPayable);
             lblRecieved.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceAmountRecieved);
-            lblBalance.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceBalance);
+            if (invoiceModel.InvoiceBalance >= 0)
+                lblBalance.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", invoiceModel.InvoiceBalance);
+            else
+                lblBalance.Text = "";
+
         }
 
         void GenerateReciept()
@@ -80,7 +85,7 @@ namespace HarithmaSalesAppv2
             invoiceItemModel = new InvoiceItem();
             invoiceModel = new Classes.CurrentInvoice();
             lblCode.Text = lblName.Text = lblPrice.Text = lblDescription.Text = "";
-            lblTotal.Text = lblRecieved.Text = lblGrandTotal.Text = lblDiscount.Text = lblBalance.Text = "_";
+            lblTotal.Text = lblRecieved.Text = lblGrandTotal.Text = lblItemDiscount.Text = lblBalance.Text = lblManualDiscount.Text = "_";
             txtRecievedAmount.Text = "Received Amount";
             txtRemarks.Text = "Remarks";
 
@@ -109,19 +114,25 @@ namespace HarithmaSalesAppv2
         void setRecievedAmount()
         {
             decimal value, discount;
+            string paymentMethod = drpPaymentMethod.selectedValue.ToString();
+            string remarks = txtRemarks.Text.ToString().Trim();
+
             if (decimal.TryParse(txtRecievedAmount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out value))
             {
-                if (value > invoiceModel.InvoiceAmountPayable)
+                if(decimal.TryParse(txtDiscount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out discount))
                 {
-                    invoiceModel.setRecievedAmount(value);
-                    invoiceModel.InvoicePaymentMethod = drpPaymentMethod.selectedValue.ToString();
-                    if (txtRemarks.Text != "Remarks")
-                        invoiceModel.InvoiceRemarks = txtRemarks.Text.ToString().Trim();
-                    //if (decimal.TryParse(txtDiscount.Text, NumberStyles.Currency, new CultureInfo("si-LK").NumberFormat, out discount))
-                        //invoice
-                    UpdateInvoice();
+                    if(value>= invoiceModel.InvoiceAmount - invoiceModel.InvoiceDiscount - discount)
+                    {
+                        if (!remarks.Equals("Remarks"))
+                            invoiceModel.setRecievedAmount(value, discount, paymentMethod, remarks);
+                        else
+                            invoiceModel.setRecievedAmount(value, discount, paymentMethod, null);
+                    }
                 }
+                else if(value>= invoiceModel.InvoiceAmount - invoiceModel.InvoiceDiscount)
+                    invoiceModel.setRecievedAmount(value, 0, paymentMethod, null);
             }
+            UpdateInvoice();
         }
 
         private void InvoiceForm_Load(object sender, EventArgs e)
@@ -294,6 +305,11 @@ namespace HarithmaSalesAppv2
                 txtDiscount.Text = String.Format(new CultureInfo("si-LK"), "{0:C2}", value);
             else
                 txtDiscount.Text = String.Empty;
+        }
+
+        private void txtDiscount_Enter(object sender, EventArgs e)
+        {
+            txtDiscount.Text = "";
         }
     }
 }
