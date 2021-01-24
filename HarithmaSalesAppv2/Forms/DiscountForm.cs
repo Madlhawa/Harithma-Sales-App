@@ -73,15 +73,14 @@ namespace HarithmaSalesAppv2
                 if (lblItemID.Text != "")
                 {
                     discountModel.ItemID = itemModel.ItemID;
-                    discountModel.DiscountValue = nudDiscount.Value;
+                    discountModel.DiscountValue = nudDiscount.Value/100;
                     discountModel.DiscountStartDate = dtpStartDate.Value;
                     discountModel.DiscountEndDate = dtpEndDate.Value;
-                    MessageBox.Show(dtpStartDate.Value.ToString());
                     
                     db.Discounts.Add(discountModel);
                     db.SaveChanges();
 
-                    itemModel.ItemDiscount = nudDiscount.Value;
+                    itemModel.ItemDiscount = nudDiscount.Value/100;
                     db.Entry(itemModel).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
 

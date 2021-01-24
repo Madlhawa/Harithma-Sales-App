@@ -66,8 +66,9 @@ namespace HarithmaSalesAppv2
 
                 cr = new Reports.crptInvoice();
                 cr.SetDataSource(ds);
+                cr.SetParameterValue("InvoiceID", invoiceModel.InvoiceID);
                 cr.SetParameterValue("InvoiceAmount", invoiceModel.InvoiceAmount);
-                cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceDiscount);
+                cr.SetParameterValue("InvoiceDiscount", invoiceModel.InvoiceTotalDiscount);
                 cr.SetParameterValue("InvoiceAmountPayable", invoiceModel.InvoiceAmountPayable);
                 cr.SetParameterValue("InvoiceAmountRecieved", invoiceModel.InvoiceAmountRecieved);
                 cr.SetParameterValue("Invoicebalance", invoiceModel.InvoiceBalance);
@@ -264,10 +265,10 @@ namespace HarithmaSalesAppv2
         {
             if (invoiceModel.InvoiceAmountRecieved > 0)
             {
+                invoiceModel.InvoiceID = perform.submitInvoice(invoiceModel);
                 GenerateReciept();
                 cr.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
                 cr.PrintToPrinter(1, false, 0, 0);
-                perform.submitInvoice(invoiceModel);
             }
 
             ClearAll();

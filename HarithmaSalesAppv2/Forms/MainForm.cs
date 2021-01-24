@@ -64,7 +64,7 @@ namespace HarithmaSalesAppv2
 
         private void Main_Load(object sender, EventArgs e)
         {
-            openForm(new Forms.UIElementsForm());
+            openForm(new InvoiceForm());
         }
     }
 }

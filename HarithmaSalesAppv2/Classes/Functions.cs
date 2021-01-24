@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Data.Entity;
 
 namespace HarithmaSalesAppv2
 {
@@ -24,7 +25,7 @@ namespace HarithmaSalesAppv2
             }
         }
 
-        public void submitInvoice(Classes.CurrentInvoice currentInvoice)
+        public int submitInvoice(Classes.CurrentInvoice currentInvoice)
         {
             Invoice invoice = new Invoice();
 
@@ -35,6 +36,16 @@ namespace HarithmaSalesAppv2
                 itemInvoice.Quantity = currentItem.invoiceItemQuantity;
                 itemInvoice.Amount = currentItem.invoiceItemAmount;
                 itemInvoice.Discount = currentItem.invoiceItemDiscountAmount;
+
+                Item item = new Item();
+                using (HarithmaSalesEntities db = new HarithmaSalesEntities())
+                {
+                    item = db.Items.Where(x => x.ItemID == currentItem.ItemID).FirstOrDefault();
+                    int currentQuantity = item.ItemAvailableQuantity;
+                    item.ItemAvailableQuantity = currentQuantity - itemInvoice.Quantity;
+                    db.Entry(item).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
 
                 invoice.Item_Invoice.Add(itemInvoice);
             }
@@ -54,6 +65,8 @@ namespace HarithmaSalesAppv2
                 db.Invoices.Add(invoice);
                 db.SaveChanges();
             }
+
+            return invoice.InvoiceID;
         }
     }
 }
