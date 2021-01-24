@@ -56,7 +56,7 @@ namespace HarithmaSalesAppv2
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 749);
+            this.panelSideMenu.Size = new System.Drawing.Size(154, 749);
             this.panelSideMenu.TabIndex = 5;
             // 
             // btnSettings
@@ -88,7 +88,7 @@ namespace HarithmaSalesAppv2
             this.btnSettings.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnSettings.OnHoverTextColor = System.Drawing.Color.White;
             this.btnSettings.selected = false;
-            this.btnSettings.Size = new System.Drawing.Size(250, 70);
+            this.btnSettings.Size = new System.Drawing.Size(154, 70);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@ namespace HarithmaSalesAppv2
             this.btnInvoice.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnInvoice.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInvoice.selected = false;
-            this.btnInvoice.Size = new System.Drawing.Size(250, 70);
+            this.btnInvoice.Size = new System.Drawing.Size(154, 70);
             this.btnInvoice.TabIndex = 4;
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,7 +162,7 @@ namespace HarithmaSalesAppv2
             this.btnDiscount.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnDiscount.OnHoverTextColor = System.Drawing.Color.White;
             this.btnDiscount.selected = false;
-            this.btnDiscount.Size = new System.Drawing.Size(250, 70);
+            this.btnDiscount.Size = new System.Drawing.Size(154, 70);
             this.btnDiscount.TabIndex = 3;
             this.btnDiscount.Text = "Discount";
             this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -199,7 +199,7 @@ namespace HarithmaSalesAppv2
             this.btnInventory.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnInventory.OnHoverTextColor = System.Drawing.Color.White;
             this.btnInventory.selected = false;
-            this.btnInventory.Size = new System.Drawing.Size(250, 70);
+            this.btnInventory.Size = new System.Drawing.Size(154, 70);
             this.btnInventory.TabIndex = 2;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -236,7 +236,7 @@ namespace HarithmaSalesAppv2
             this.btnItem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
             this.btnItem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnItem.selected = false;
-            this.btnItem.Size = new System.Drawing.Size(250, 70);
+            this.btnItem.Size = new System.Drawing.Size(154, 70);
             this.btnItem.TabIndex = 1;
             this.btnItem.Text = "Item";
             this.btnItem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +251,7 @@ namespace HarithmaSalesAppv2
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 90);
+            this.panel1.Size = new System.Drawing.Size(154, 90);
             this.panel1.TabIndex = 0;
             // 
             // label2
@@ -259,7 +259,7 @@ namespace HarithmaSalesAppv2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.label2.Location = new System.Drawing.Point(43, 0);
+            this.label2.Location = new System.Drawing.Point(-1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 47);
             this.label2.TabIndex = 1;
@@ -270,7 +270,7 @@ namespace HarithmaSalesAppv2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Light", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(120)))), ((int)(((byte)(190)))));
-            this.label1.Location = new System.Drawing.Point(56, 30);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 47);
             this.label1.TabIndex = 0;
@@ -279,9 +279,9 @@ namespace HarithmaSalesAppv2
             // panelChildForm
             // 
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Location = new System.Drawing.Point(154, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1120, 749);
+            this.panelChildForm.Size = new System.Drawing.Size(1216, 749);
             this.panelChildForm.TabIndex = 6;
             // 
             // Main
